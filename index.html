@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>s&amp;m cookies | Galletas tipo New York en Medellín</title>
-<meta name="description" content="Galletas estilo Nueva York grandes, suaves e irresistibles: clásica, cookies & cream, lotus, red velvet, pistacho y más. Pide por unidad o en caja a domicilio.">
+<meta name="description" content="s&amp;m cookies: galletas tipo New York hechas con amor en Medellín. Cajas de 4, 6 y 8 galletas con sabores de libre elección. Pedidos con dos días de anticipación.">
 <meta property="og:title" content="s&amp;m cookies | Galletas tipo New York en Medellín">
 <meta property="og:description" content="Galletas tipo New York hechas con amor, hechas para compartir. Pedidos con dos días de anticipación.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="img/hero.jpg">
+<meta property="og:image" content="img/regalo.jpg">
 <meta property="og:locale" content="es_CO">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 4a28 28 0 1 0 28 28 8 8 0 0 1-8-8 8 8 0 0 1-8-8 8 8 0 0 1-8-8 4 4 0 0 1-4-4z' fill='%23E3AE5F' stroke='%23C58C3B' stroke-width='2.5'/%3E%3Cg fill='%233A2518'%3E%3Ccircle cx='20' cy='24' r='4'/%3E%3Ccircle cx='34' cy='38' r='4.6'/%3E%3Ccircle cx='19' cy='42' r='3.2'/%3E%3Ccircle cx='45' cy='44' r='3'/%3E%3Ccircle cx='31' cy='19' r='2.6'/%3E%3Ccircle cx='26' cy='52' r='2.4'/%3E%3C/g%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="img/clasica.jpg">
+<link rel="icon" type="image/jpeg" href="img/logo.jpg">
+<link rel="apple-touch-icon" href="img/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@500;600;700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -22,9 +22,15 @@
   "name": "s&m cookies",
   "alternateName": "symgalletas",
   "slogan": "Hechas con amor, hechas para compartir.",
-  "description": "Galletas estilo Nueva York por unidad y en cajas de 4, 6 y 12.",
-  "servesCuisine": "Galletas estilo Nueva York",
-  "image": "img/hero.jpg",
+  "description": "Galletas tipo New York en cajas de 4, 6 y 8 unidades con sabores de libre elección.",
+  "servesCuisine": "Galletas tipo New York",
+  "logo": "img/logo.jpg",
+  "image": "img/regalo.jpg",
+  "makesOffer": [
+    { "@type": "Offer", "price": "22500", "priceCurrency": "COP", "itemOffered": { "@type": "Product", "name": "Caja de galletas x4" } },
+    { "@type": "Offer", "price": "31500", "priceCurrency": "COP", "itemOffered": { "@type": "Product", "name": "Caja de galletas x6" } },
+    { "@type": "Offer", "price": "40500", "priceCurrency": "COP", "itemOffered": { "@type": "Product", "name": "Caja de galletas x8" } }
+  ],
   "priceRange": "$$",
   "currenciesAccepted": "COP",
   "areaServed": "Medellín",
@@ -155,26 +161,6 @@
   .card .pill-gold { width: 100%; padding: 11px 16px; font-size: .76rem; }
   .dark .card { border-color: transparent; color: var(--ink); }
 
-  /* Carousel */
-  .carousel { position: relative; }
-  .track { position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 3 * 20px) / 4); gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 2px 12px; scrollbar-width: none; }
-  .track::-webkit-scrollbar { display: none; }
-  .track > * { scroll-snap-align: start; }
-  .car-btn { position: absolute; top: 34%; width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--gold); color: var(--choco); cursor: pointer; display: grid; place-items: center; z-index: 2; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
-  .car-btn svg { width: 18px; height: 18px; }
-  .car-btn.prev { left: -22px; } .car-btn.next { right: -22px; }
-  @media (max-width: 1100px) { .track { grid-auto-columns: calc((100% - 2 * 20px) / 3); } }
-  @media (max-width: 760px) { .track { grid-auto-columns: 78%; } .car-btn { display: none; } }
-
-  /* Recommended */
-  .rec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .rec { display: grid; grid-template-columns: 1.1fr 1fr; text-align: left; }
-  .rec .card-media { aspect-ratio: auto; min-height: 300px; }
-  .rec .card-body { padding: 28px; justify-content: center; }
-  .rec h3 { font-size: 1.35rem; }
-  @media (max-width: 900px) { .rec-grid { grid-template-columns: 1fr; } }
-  @media (max-width: 540px) { .rec { grid-template-columns: 1fr; } .rec .card-media { min-height: 220px; } }
-
   /* Catalog */
   .filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; }
   .filters button { border: 1.5px solid var(--line); background: var(--paper); border-radius: 999px; padding: 9px 20px; cursor: pointer; font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; font-size: .76rem; }
@@ -233,8 +219,36 @@
     .footer-grid > div:first-child, .footer-grid > div:last-child { grid-column: 1 / -1; }
   }
 
+  /* Logo de Instagram */
+  .logo .logo-img { width: 58px; height: 58px; border-radius: 50%; object-fit: cover; flex: none; box-shadow: 0 0 0 2px var(--gold); }
+  @media (max-width: 420px) { .logo .logo-img { width: 46px; height: 46px; } }
+
+  /* Cajas */
+  .boxes { grid-template-columns: repeat(3, 1fr); }
+  .boxes .card-media { aspect-ratio: 4 / 5; }
+  .boxes .price { font-size: 1.35rem; font-weight: 700; font-family: var(--display); }
+  @media (max-width: 760px) { .boxes { grid-template-columns: 1fr; } .boxes .desc { display: block; } .boxes .card-body { padding: 16px; } }
+  .pick[aria-pressed="true"] { background: var(--choco); color: var(--gold); }
+
+  /* Regalo */
+  .gift { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; }
+  .gift .eyebrow, .gift .section-title, .gift .section-sub { text-align: left; margin-left: 0; }
+  .posters { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .posters img { width: 100%; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+  @media (max-width: 800px) { .gift { grid-template-columns: 1fr; } }
+
+  /* Elegidos en el carrito */
+  .chosen { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 14px; margin: 14px 0; }
+  .chosen h3 { margin: 0 0 8px; font-size: .85rem; text-transform: uppercase; letter-spacing: .05em; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chips button { border: 1.5px solid var(--line); background: var(--cream); border-radius: 999px; padding: 4px 10px; font-size: .82rem; cursor: pointer; }
+  .chosen p { margin: 0; font-size: .86rem; color: var(--ink-soft); }
+
   /* Instagram */
   .ig { text-align: center; }
+  .ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 760px; margin: 0 auto 36px; }
+  .ig-grid img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; }
+  .ig-grid a:hover img { opacity: .85; }
   .highlights { list-style: none; margin: 0 0 32px; padding: 0; display: flex; justify-content: center; gap: clamp(20px, 5vw, 48px); flex-wrap: wrap; }
   .highlights a { display: flex; flex-direction: column; align-items: center; gap: 10px; text-decoration: none; font-weight: 500; font-size: .92rem; }
   .highlights .ring { width: 86px; height: 86px; border-radius: 50%; display: grid; place-items: center; font-size: 2rem; background: var(--choco); box-shadow: 0 0 0 3px var(--choco-2), 0 0 0 5px var(--gold); transition: transform .15s ease; }
@@ -285,11 +299,7 @@
 <header class="topbar">
   <div class="wrap">
     <a class="logo" href="#inicio" aria-label="s&amp;m cookies, inicio">
-      <svg viewBox="0 0 64 64" aria-hidden="true">
-        <path d="M32 4a28 28 0 1 0 28 28 8 8 0 0 1-8-8 8 8 0 0 1-8-8 8 8 0 0 1-8-8 4 4 0 0 1-4-4z" fill="#E3AE5F"/>
-        <path d="M32 4a28 28 0 1 0 28 28 8 8 0 0 1-8-8 8 8 0 0 1-8-8 8 8 0 0 1-8-8 4 4 0 0 1-4-4z" fill="none" stroke="#C58C3B" stroke-width="2.5"/>
-        <g fill="#3A2518"><circle cx="20" cy="24" r="4"/><circle cx="34" cy="38" r="4.6"/><circle cx="19" cy="42" r="3.2"/><circle cx="45" cy="44" r="3"/><circle cx="31" cy="19" r="2.6"/><circle cx="26" cy="52" r="2.4"/></g>
-      </svg>
+      <img class="logo-img" src="img/logo.jpg" alt="" width="58" height="58">
       <span class="logo-text"><strong>s&amp;m cookies</strong><small>GALLETAS TIPO NEW YORK</small></span>
     </a>
     <nav class="mainnav" aria-label="Principal">
@@ -313,7 +323,7 @@
   </div>
   <div class="wrap search-row" id="searchRow">
     <label class="sr-only" for="search">Buscar galletas</label>
-    <input id="search" type="search" placeholder="Busca por sabor: pistacho, lotus, red velvet…">
+    <input id="search" type="search" placeholder="Busca un sabor: pistacho, lotus, red velvet…">
   </div>
 </header>
 
@@ -325,7 +335,7 @@
         <p class="kicker">Galletas estilo</p>
         <h1 id="hero-title"><span>Nueva</span><span class="gold">York</span></h1>
         <p class="subline">Grandes · Suaves · Irresistibles</p>
-        <a class="pill-gold" href="#galletas">Descubre nuestros sabores
+        <a class="pill-gold" href="#galletas">Arma tu caja
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
         </a>
       </div>
@@ -334,25 +344,27 @@
 
   <nav class="strip" id="sabores" aria-label="Sabores destacados"></nav>
 
-  <section class="section" id="galletas" aria-labelledby="mas-vendidas">
+  <section class="section" id="galletas" aria-labelledby="cajas-title">
     <div class="wrap">
-      <p class="eyebrow">Las favoritas</p>
-      <h2 class="section-title" id="mas-vendidas">Galletas New York a domicilio</h2>
-      <p class="section-sub">Grandes de 170 g, con bordes dorados y el centro suave. Elige por unidad o en caja del mismo sabor.</p>
-      <div class="carousel">
-        <button class="car-btn prev" type="button" data-scroll="-1" aria-label="Ver anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m15 6-6 6 6 6"/></svg></button>
-        <div class="track" id="track"></div>
-        <button class="car-btn next" type="button" data-scroll="1" aria-label="Ver siguientes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></button>
-      </div>
+      <p class="eyebrow">Presentaciones 🎁</p>
+      <h2 class="section-title" id="cajas-title">Cajas de galletas</h2>
+      <p class="section-sub">Los sabores son de libre elección. Elige tu caja y márcanos tus sabores favoritos en el menú.</p>
+      <div class="grid boxes" id="boxes"></div>
     </div>
   </section>
 
-  <section class="section dark" aria-labelledby="recomendadas">
-    <div class="wrap">
-      <p class="eyebrow">Recomendadas</p>
-      <h2 class="section-title" id="recomendadas">Para darte un gusto</h2>
-      <p class="section-sub">Las que más repiten nuestros clientes: caramelo especiado con trozos de galleta lotus y pistacho tostado con chocolate blanco.</p>
-      <div class="rec-grid" id="recGrid"></div>
+  <section class="section dark" aria-labelledby="regalo-title">
+    <div class="wrap gift">
+      <div class="gift-copy">
+        <p class="eyebrow">Para regalar</p>
+        <h2 class="section-title" id="regalo-title">El regalo perfecto</h2>
+        <p class="section-sub">Para celebrar lo bonito de tenernos. Porque en S&amp;M los mejores momentos saben a galleta.</p>
+        <a class="pill-gold" href="#galletas">Elegir mi caja</a>
+      </div>
+      <div class="posters">
+        <img src="img/regalo.jpg" alt="Afiche de s&amp;m cookies: El regalo perfecto para celebrar lo bonito de tenernos, con una caja roja de galletas" loading="lazy">
+        <img src="img/momentos.jpg" alt="Afiche de s&amp;m cookies: Porque en S&amp;M los mejores momentos saben a galleta" loading="lazy">
+      </div>
     </div>
   </section>
 
@@ -360,7 +372,7 @@
     <div class="wrap">
       <p class="eyebrow">Menú 🍪</p>
       <h2 class="section-title" id="seleccion">Nuestro menú</h2>
-      <p class="section-sub">Clásicas, rellenas, especiales y presentaciones para regalar.</p>
+      <p class="section-sub">Marca los sabores que quieres en tu caja con “Quiero este sabor”. Te confirmamos la disponibilidad por WhatsApp.</p>
       <div class="filters" id="filters" role="group" aria-label="Filtrar por categoría"></div>
       <div class="grid" id="grid" aria-live="polite"></div>
     </div>
@@ -389,6 +401,11 @@
       <p class="eyebrow">Clientes ✨</p>
       <h2 class="section-title" id="ig-title">Síguenos en Instagram</h2>
       <p class="section-sub">En <strong>@symgalletas</strong> compartimos el proceso de creación de nuestras galletas, nuestras presentaciones y lo que dicen nuestros clientes.</p>
+      <div class="ig-grid">
+        <a href="https://www.instagram.com/symgalletas/" target="_blank" rel="noopener"><img src="img/galletas-empacadas.jpg" alt="Galletas s&amp;m cookies empacadas con su sticker" loading="lazy"></a>
+        <a href="https://www.instagram.com/symgalletas/" target="_blank" rel="noopener"><img src="img/cajas-precios.jpg" alt="Afiche de cajas de galletas x4, x6 y x8 con precios" loading="lazy"></a>
+        <a href="https://www.instagram.com/symgalletas/" target="_blank" rel="noopener"><img src="img/caja-x6.jpg" alt="Caja de galletas con moño rojo" loading="lazy"></a>
+      </div>
       <ul class="highlights">
         <li><a href="https://www.instagram.com/symgalletas/" target="_blank" rel="noopener"><span class="ring">✨</span>Clientes</a></li>
         <li><a href="https://www.instagram.com/symgalletas/" target="_blank" rel="noopener"><span class="ring">🎁</span>Presentaciones</a></li>
@@ -433,11 +450,11 @@
       <div class="faq">
         <details>
           <summary>¿Cómo hago mi pedido?</summary>
-          <p>Añade tus galletas al carrito, escribe tu nombre, dirección y fecha de entrega, y toca “Enviar pedido por WhatsApp”. Te respondemos para confirmar el pago y la hora.</p>
+          <p>Añade tu caja al carrito, marca tus sabores en el menú, escribe tu nombre, dirección y fecha de entrega, y toca “Enviar pedido por WhatsApp”. Te respondemos para confirmar el pago y la hora.</p>
         </details>
         <details>
-          <summary>¿Puedo elegir los sabores de una caja surtida?</summary>
-          <p>Sí. Escribe los sabores en el campo de notas del pedido o cuéntanos por WhatsApp al confirmar.</p>
+          <summary>¿Puedo elegir los sabores de mi caja?</summary>
+          <p>Sí, los sabores son de libre elección. Márcalos en el menú con “Quiero este sabor” o escríbelos en las notas del pedido.</p>
         </details>
         <details>
           <summary>¿Cómo conservo las galletas?</summary>
@@ -457,7 +474,7 @@
     <div class="footer-grid">
       <div>
         <a class="logo" href="#inicio">
-          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4a28 28 0 1 0 28 28 8 8 0 0 1-8-8 8 8 0 0 1-8-8 8 8 0 0 1-8-8 4 4 0 0 1-4-4z" fill="#E3AE5F"/><g fill="#3A2518"><circle cx="20" cy="24" r="4"/><circle cx="34" cy="38" r="4.6"/><circle cx="19" cy="42" r="3.2"/><circle cx="45" cy="44" r="3"/><circle cx="31" cy="19" r="2.6"/></g></svg>
+          <img class="logo-img" src="img/logo.jpg" alt="" width="58" height="58">
           <span class="logo-text"><strong>s&amp;m cookies</strong><small>GALLETAS TIPO NEW YORK</small></span>
         </a>
         <p class="tagline">Hechas con amor, hechas para compartir. 🍪🤎</p>
@@ -528,64 +545,44 @@
     { id: "clasicas", name: "Clásicas" },
     { id: "rellenas", name: "Rellenas" },
     { id: "especiales", name: "Especiales" },
-    { id: "cajas", name: "Presentaciones" },
-    { id: "acompanantes", name: "Acompañantes" },
   ];
 
-  // photo: foto real; sin foto se dibuja una ilustración con dough/edge/chunks.
-  const PRODUCTS = [
-    { id: "clasica", cat: "clasicas", name: "Clásica", price: 9500, tag: "Más vendida", photo: "img/clasica.jpg",
-      desc: "Mantequilla tostada y trozos grandes de chocolate semiamargo.", dough: "#D29A5C", edge: "#A86C35", chunks: ["#3B1F14", "#3B1F14", "#E9D3A6"] },
-    { id: "cookies-cream", cat: "clasicas", name: "Cookies & cream", price: 10500, photo: "img/cookies-cream.jpg",
-      desc: "Masa de vainilla con trozos de galleta de chocolate y chocolate blanco.", dough: "#E7CFA6", edge: "#B99A6B", chunks: ["#1E1715", "#1E1715", "#FFFFFF"] },
-    { id: "lotus", cat: "especiales", name: "Lotus", price: 11500, tag: "Especial", photo: "img/lotus.jpg",
-      desc: "Galleta especiada con trozos de galleta lotus y hilos de caramelo.", dough: "#C98A4E", edge: "#9A6331", chunks: ["#B06A2C", "#E2B57A"] },
-    { id: "red-velvet", cat: "rellenas", name: "Red velvet", price: 11000, tag: "Rellena", photo: "img/red-velvet.jpg",
-      desc: "Masa red velvet con chips de chocolate blanco y centro de queso crema.", dough: "#A3282F", edge: "#6E171C", chunks: ["#F7F0E6"] },
-    { id: "pistacho", cat: "especiales", name: "Pistacho", price: 12500, tag: "Especial", photo: "img/pistacho.jpg",
-      desc: "Pistacho tostado, crema de pistacho y trozos de chocolate blanco.", dough: "#C9B26A", edge: "#8F7B3A", chunks: ["#7E9A3C", "#FFF7E6"] },
-    { id: "doble-chocolate", cat: "clasicas", name: "Doble chocolate", price: 9500,
-      desc: "Masa de cacao al 70 % con trozos de chocolate blanco y oscuro.", dough: "#4E2D1F", edge: "#2F1A10", chunks: ["#F3E8D4", "#F3E8D4", "#24120A"] },
-    { id: "avellana", cat: "rellenas", name: "Tentación de avellana", price: 11500, tag: "Rellena",
-      desc: "Galleta de chocolate con corazón de crema de avellanas y cacao.", dough: "#8A5530", edge: "#5E361B", chunks: ["#2B150B", "#C99A62"] },
-    { id: "arequipe-sal", cat: "rellenas", name: "Arequipe y sal", price: 11000, tag: "Rellena",
-      desc: "Centro de arequipe, chips de caramelo y escamas de sal marina.", dough: "#D9A466", edge: "#A9713A", chunks: ["#B5651D", "#FFFFFF"] },
-    { id: "maracuya", cat: "especiales", name: "Maracuyá y chocolate blanco", price: 10500,
-      desc: "Ralladura de maracuyá y trozos de chocolate blanco.", dough: "#E2B75F", edge: "#B88A35", chunks: ["#FFF7E6", "#5B3A12"] },
-    { id: "caja-4", cat: "cajas", name: "Caja surtida x4", price: 40000, box: 4, tag: "Caja", photo: "img/clasica.jpg",
-      desc: "Cuatro galletas a tu gusto. Indícanos los sabores en las notas del pedido." },
-    { id: "caja-6", cat: "cajas", name: "Caja surtida x6", price: 58000, box: 6, tag: "Caja", photo: "img/red-velvet.jpg",
-      desc: "Seis galletas a tu gusto, en caja con cinta. Ideal para regalar." },
-    { id: "caja-12", cat: "cajas", name: "Caja surtida x12", price: 110000, box: 12, tag: "Caja", photo: "img/cookies-cream.jpg",
-      desc: "Doce galletas para compartir en la oficina o en familia." },
-    { id: "leche", cat: "acompanantes", name: "Leche fría 250 ml", price: 3500, simple: true, kind: "milk",
-      desc: "Leche entera fría para acompañar tu galleta." },
-    { id: "tarjeta", cat: "acompanantes", name: "Tarjeta de regalo", price: 3000, simple: true, kind: "card",
-      desc: "Tarjeta impresa con tu mensaje personalizado." },
-    { id: "vela", cat: "acompanantes", name: "Vela de cumpleaños", price: 1500, simple: true, kind: "candle",
-      desc: "Vela para convertir tu galleta en celebración." },
+  // Cajas: precios publicados en Instagram (@symgalletas), sabores de libre elección.
+  const BOXES = [
+    { id: "caja-4", name: "Caja de galletas x4", units: 4, price: 22500, photo: "img/caja-x4.jpg",
+      desc: "Cuatro galletas tipo New York en caja con moño. Los sabores son de libre elección." },
+    { id: "caja-6", name: "Caja de galletas x6", units: 6, price: 31500, photo: "img/caja-x6.jpg", tag: "Para regalar",
+      desc: "Seis galletas tipo New York en caja con moño. Los sabores son de libre elección." },
+    { id: "caja-8", name: "Caja de galletas x8", units: 8, price: 40500, photo: "img/galletas-empacadas.jpg",
+      desc: "Ocho galletas tipo New York para compartir. Los sabores son de libre elección." },
   ];
-  const byId = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
+
+  // Sabores del menú. photo: foto real; sin foto se dibuja una ilustración con dough/edge/chunks.
+  const FLAVORS = [
+    { id: "clasica", cat: "clasicas", name: "Clásica", photo: "img/clasica.jpg",
+      desc: "Mantequilla tostada y trozos grandes de chocolate semiamargo." },
+    { id: "cookies-cream", cat: "clasicas", name: "Cookies & cream", photo: "img/cookies-cream.jpg",
+      desc: "Masa de vainilla con trozos de galleta de chocolate y chocolate blanco." },
+    { id: "lotus", cat: "especiales", name: "Lotus", photo: "img/lotus.jpg",
+      desc: "Galleta especiada con trozos de galleta lotus y hilos de caramelo." },
+    { id: "red-velvet", cat: "rellenas", name: "Red velvet", photo: "img/red-velvet.jpg",
+      desc: "Masa red velvet con chips de chocolate blanco y centro de queso crema." },
+    { id: "pistacho", cat: "especiales", name: "Pistacho", photo: "img/pistacho.jpg",
+      desc: "Pistacho tostado, crema de pistacho y trozos de chocolate blanco." },
+    { id: "doble-chocolate", cat: "clasicas", name: "Doble chocolate",
+      desc: "Masa de cacao con trozos de chocolate blanco y oscuro.", dough: "#4E2D1F", edge: "#2F1A10", chunks: ["#F3E8D4", "#F3E8D4", "#24120A"] },
+    { id: "avellana", cat: "rellenas", name: "Tentación de avellana",
+      desc: "Galleta de chocolate con corazón de crema de avellanas.", dough: "#8A5530", edge: "#5E361B", chunks: ["#2B150B", "#C99A62"] },
+    { id: "arequipe-sal", cat: "rellenas", name: "Arequipe y sal",
+      desc: "Centro de arequipe, chips de caramelo y escamas de sal marina.", dough: "#D9A466", edge: "#A9713A", chunks: ["#B5651D", "#FFFFFF"] },
+  ];
+  const boxById = Object.fromEntries(BOXES.map(b => [b.id, b]));
+  const flavorById = Object.fromEntries(FLAVORS.map(f => [f.id, f]));
   const STRIP = ["clasica", "cookies-cream", "lotus", "red-velvet", "pistacho"];
-  const BEST = ["clasica", "red-velvet", "cookies-cream", "doble-chocolate", "arequipe-sal", "caja-6"];
-  const RECOMMENDED = ["lotus", "pistacho"];
 
   const cop = n => "$" + n.toLocaleString("es-CO");
-  const round500 = n => Math.round(n / 500) * 500;
-  function variants(p) {
-    if (p.box || p.simple) return [{ key: "u", label: p.box ? `Caja x${p.box}` : "Unidad", price: p.price }];
-    return [
-      { key: "u", label: "Unidad", price: p.price },
-      { key: "x4", label: "Caja x4 (mismo sabor)", price: round500(p.price * 4 * .95) },
-      { key: "x6", label: "Caja x6 (mismo sabor)", price: round500(p.price * 6 * .9) },
-    ];
-  }
-  const priceLabel = p => {
-    const v = variants(p);
-    return v.length > 1 ? `${cop(v[0].price)} – ${cop(v[v.length - 1].price)}` : cop(v[0].price);
-  };
 
-  // ---------- Ilustraciones (solo productos sin foto) ----------
+  // ---------- Ilustraciones (solo sabores sin foto) ----------
   function rng(seed) {
     return () => {
       seed |= 0; seed = seed + 0x6D2B79F5 | 0;
@@ -637,28 +634,24 @@
       ${cracks}${chunks}
     </svg>`;
   }
-  function extraSVG(p) {
-    if (p.kind === "milk") return `<svg viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="90" rx="24" ry="4" fill="#2C1B11" opacity=".15"/><path d="M30 18h40l-5 70H35z" fill="#fff" stroke="#E0D6CF" stroke-width="2"/><path d="M32 34h36l-3.8 54H35.8z" fill="#FAF7F2"/></svg>`;
-    if (p.kind === "card") return `<svg viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="84" rx="34" ry="4" fill="#2C1B11" opacity=".15"/><rect x="18" y="26" width="64" height="52" rx="4" fill="#E3AE5F" transform="rotate(-6 50 52)"/><rect x="20" y="24" width="64" height="52" rx="4" fill="#fff" stroke="#E8DCCB" stroke-width="1.5"/><path d="M52 40c-4-6-13-2-10 5 2 4 10 9 10 9s8-5 10-9c3-7-6-11-10-5z" fill="#C58C3B"/><path d="M32 62h40M38 68h28" stroke="#CDBBA6" stroke-width="2" stroke-linecap="round"/></svg>`;
-    return `<svg viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="88" rx="16" ry="3.5" fill="#2C1B11" opacity=".15"/><rect x="44" y="34" width="12" height="54" rx="3" fill="#3A2518"/><path d="M44 46l12-6M44 58l12-6M44 70l12-6M44 82l12-6" stroke="#E3AE5F" stroke-width="3"/><path d="M50 30v-4" stroke="#2C1B11" stroke-width="2"/><path d="M50 8c6 7 6 13 0 17-6-4-6-10 0-17z" fill="#FCB900"/><path d="M50 14c3 4 3 7 0 9-3-2-3-5 0-9z" fill="#FF6900"/></svg>`;
-  }
-  const media = p => p.photo ? `<img src="${p.photo}" alt="Galleta ${p.name}" loading="lazy">` : (p.kind ? extraSVG(p) : cookieSVG(p));
+  const media = (p, alt) => p.photo ? `<img src="${p.photo}" alt="${alt}" loading="lazy">` : cookieSVG(p);
 
   // ---------- Estado ----------
-  const state = { cart: [], filter: "all", query: "" };
+  // cart: cajas [{ id, qty }]; flavors: ids de sabores elegidos para las cajas.
+  const state = { cart: [], flavors: [], filter: "all", query: "" };
   try {
-    const saved = JSON.parse(localStorage.getItem("sm-cookies-cart") || "[]");
-    if (Array.isArray(saved)) state.cart = saved.flatMap(l => {
-      const p = l && byId[l.id];
-      const v = p && variants(p).find(x => x.key === l.v);
-      const q = Number(l.qty);
-      return v && Number.isInteger(q) && q > 0 && q < 100 ? [{ id: p.id, v: v.key, qty: q }] : [];
+    const saved = JSON.parse(localStorage.getItem("sm-cookies-cart") || "{}");
+    if (Array.isArray(saved.cart)) state.cart = saved.cart.flatMap(l => {
+      const q = Number(l && l.qty);
+      return l && boxById[l.id] && Number.isInteger(q) && q > 0 && q < 100 ? [{ id: l.id, qty: q }] : [];
     });
+    if (Array.isArray(saved.flavors)) state.flavors = [...new Set(saved.flavors.filter(id => flavorById[id]))];
   } catch (_) {}
-  const save = () => { try { localStorage.setItem("sm-cookies-cart", JSON.stringify(state.cart)); } catch (_) {} };
-  const lineInfo = l => { const p = byId[l.id]; const v = variants(p).find(x => x.key === l.v); return { p, v, total: v.price * l.qty }; };
-  const cartTotal = () => state.cart.reduce((s, l) => s + lineInfo(l).total, 0);
+  const save = () => { try { localStorage.setItem("sm-cookies-cart", JSON.stringify({ cart: state.cart, flavors: state.flavors })); } catch (_) {} };
+  const lineTotal = l => boxById[l.id].price * l.qty;
+  const cartTotal = () => state.cart.reduce((s, l) => s + lineTotal(l), 0);
   const cartUnits = () => state.cart.reduce((s, l) => s + l.qty, 0);
+  const flavorNames = () => state.flavors.map(id => flavorById[id].name);
 
   const $ = id => document.getElementById(id);
   const canPrefill = Boolean(WHATSAPP || !WHATSAPP_LINK);
@@ -668,10 +661,10 @@
 
   // ---------- Render estático ----------
   $("sabores").innerHTML = STRIP.map(id => {
-    const p = byId[id];
+    const p = flavorById[id];
     return `<a href="#p-${id}" data-goto="${id}"><div class="ph" style="background-image:url('${p.photo}')" role="img" aria-label="Galleta ${p.name}"></div><span class="label">${p.name}</span></a>`;
   }).join("");
-  $("filters").innerHTML = [{ id: "all", name: "Todas" }, ...CATEGORIES].map(c =>
+  $("filters").innerHTML = [{ id: "all", name: "Todos" }, ...CATEGORIES].map(c =>
     `<button type="button" data-filter="${c.id}" aria-pressed="${c.id === "all"}">${c.name}</button>`).join("");
   $("year").textContent = new Date().getFullYear();
   document.querySelectorAll("[data-wa]").forEach(a => { a.href = waLink(`Hola ${BRAND}, quiero hacer un pedido.`); a.target = "_blank"; a.rel = "noopener"; });
@@ -682,33 +675,36 @@
   $("social").innerHTML = Object.entries(SOCIAL).filter(([, url]) => url).map(([k, url]) =>
     `<a href="${url}" target="_blank" rel="noopener" aria-label="${k[0].toUpperCase() + k.slice(1)}">${ICONS[k]}</a>`).join("");
 
-  function card(p, prefix, extra = "") {
-    const v = variants(p);
-    const select = v.length > 1
-      ? `<label class="sr-only" for="${prefix}v-${p.id}">Presentación de ${p.name}</label>
-         <select id="${prefix}v-${p.id}" data-variant>${v.map(x => `<option value="${x.key}">${x.label} · ${cop(x.price)}</option>`).join("")}</select>`
-      : "";
+  $("boxes").innerHTML = BOXES.map(b => `
+    <article class="card">
+      <div class="card-media">${b.tag ? `<span class="tag">${b.tag}</span>` : ""}${media(b, b.name)}</div>
+      <div class="card-body">
+        <h3>${b.name}</h3>
+        <p class="desc">${b.desc}</p>
+        <div class="price">${cop(b.price)}</div>
+        <div class="controls"><button class="pill-gold" type="button" data-add="${b.id}">Añadir al carrito<span class="sr-only">: ${b.name}</span></button></div>
+      </div>
+    </article>`).join("");
+
+  function flavorCard(p) {
+    const on = state.flavors.includes(p.id);
     return `
-      <article class="card ${extra}" ${prefix === "g-" ? `id="p-${p.id}"` : ""}>
-        <div class="card-media">${p.tag ? `<span class="tag">${p.tag}</span>` : ""}${media(p)}</div>
+      <article class="card" id="p-${p.id}">
+        <div class="card-media">${media(p, `Galleta ${p.name}`)}</div>
         <div class="card-body">
           <h3>${p.name}</h3>
           <p class="desc">${p.desc}</p>
-          <div class="price">${priceLabel(p)}</div>
-          <div class="controls">${select}<button class="pill-gold" type="button" data-add="${p.id}">Añadir al carrito<span class="sr-only">: ${p.name}</span></button></div>
+          <div class="controls"><button class="pill-gold pick" type="button" data-pick="${p.id}" aria-pressed="${on}">${on ? "✓ Sabor elegido" : "Quiero este sabor"}<span class="sr-only">: ${p.name}</span></button></div>
         </div>
       </article>`;
   }
-  $("track").innerHTML = BEST.map(id => card(byId[id], "b-")).join("");
-  $("recGrid").innerHTML = RECOMMENDED.map(id => card(byId[id], "r-", "rec")).join("");
-
   function renderGrid() {
     const q = state.query.trim().toLowerCase();
-    const items = PRODUCTS.filter(p =>
+    const items = FLAVORS.filter(p =>
       (state.filter === "all" || p.cat === state.filter) &&
       (!q || (p.name + " " + p.desc).toLowerCase().includes(q)));
-    $("grid").innerHTML = items.length ? items.map(p => card(p, "g-")).join("")
-      : `<p class="no-results">No encontramos galletas con “${state.query.replace(/[<>&"]/g, "")}”. Prueba con otro sabor o mira todas las categorías.</p>`;
+    $("grid").innerHTML = items.length ? items.map(flavorCard).join("")
+      : `<p class="no-results">No encontramos sabores con “${state.query.replace(/[<>&"]/g, "")}”. Prueba con otro o mira todo el menú.</p>`;
     document.querySelectorAll("[data-filter]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.filter === state.filter)));
   }
   renderGrid();
@@ -724,13 +720,9 @@
       state.filter = "all"; state.query = ""; $("search").value = ""; renderGrid();
       const target = $(`p-${g.dataset.goto}`);
       target.scrollIntoView({ block: "center" });
-      target.querySelector("[data-add]").focus({ preventScroll: true });
+      target.querySelector("[data-pick]").focus({ preventScroll: true });
     }
   });
-  document.querySelectorAll("[data-scroll]").forEach(btn => btn.addEventListener("click", () => {
-    const t = $("track");
-    t.scrollBy({ left: Number(btn.dataset.scroll) * (t.clientWidth * .75), behavior: "smooth" });
-  }));
   $("searchToggle").addEventListener("click", () => {
     const row = $("searchRow"), open = !row.classList.contains("open");
     row.classList.toggle("open", open);
@@ -740,19 +732,27 @@
   $("search").addEventListener("input", e => { state.query = e.target.value; state.filter = "all"; renderGrid(); });
   $("search").addEventListener("keydown", e => { if (e.key === "Enter") $("catalogo").scrollIntoView(); });
 
-
-  // ---------- Carrito ----------
+  // ---------- Carrito y sabores ----------
   document.addEventListener("click", e => {
-    const btn = e.target.closest("[data-add]");
-    if (!btn) return;
-    const p = byId[btn.dataset.add];
-    const sel = btn.closest(".card").querySelector("[data-variant]");
-    const key = sel ? sel.value : "u";
-    const line = state.cart.find(l => l.id === p.id && l.v === key);
-    if (line) line.qty = Math.min(99, line.qty + 1); else state.cart.push({ id: p.id, v: key, qty: 1 });
-    save(); renderBadge();
-    const v = variants(p).find(x => x.key === key);
-    toast(`${p.name} (${v.label.toLowerCase()}) añadida al carrito.`);
+    const add = e.target.closest("[data-add]");
+    if (add) {
+      const b = boxById[add.dataset.add];
+      const line = state.cart.find(l => l.id === b.id);
+      if (line) line.qty = Math.min(99, line.qty + 1); else state.cart.push({ id: b.id, qty: 1 });
+      save(); renderBadge();
+      toast(`${b.name} añadida al carrito.`);
+      return;
+    }
+    const pick = e.target.closest("[data-pick]");
+    if (pick) {
+      const id = pick.dataset.pick, p = flavorById[id];
+      const on = !state.flavors.includes(id);
+      state.flavors = on ? [...state.flavors, id] : state.flavors.filter(x => x !== id);
+      save();
+      pick.setAttribute("aria-pressed", String(on));
+      pick.firstChild.textContent = on ? "✓ Sabor elegido" : "Quiero este sabor";
+      toast(on ? `${p.name} agregado a tus sabores.` : `${p.name} quitado de tus sabores.`);
+    }
   });
   function renderBadge() {
     $("cartCount").textContent = cartUnits();
@@ -763,30 +763,35 @@
     const pad = n => String(n).padStart(2, "0");
     return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
   }
+  function chosenHTML() {
+    return `<div class="chosen"><h3>Tus sabores</h3>${state.flavors.length
+      ? `<div class="chips">${state.flavors.map(id => `<button type="button" data-unpick="${id}" aria-label="Quitar ${flavorById[id].name}">${flavorById[id].name} ✕</button>`).join("")}</div>`
+      : `<p>Aún no eliges sabores. Márcalos en el menú o escríbelos en las notas.</p>`}</div>`;
+  }
   function linesHTML() {
     return state.cart.map((l, i) => {
-      const { p, v, total } = lineInfo(l);
+      const b = boxById[l.id];
       return `
         <div class="line-item">
-          <div class="thumb">${media(p)}</div>
+          <div class="thumb">${media(b, "")}</div>
           <div>
-            <h3>${p.name}</h3>
-            <div class="variant">${v.label} · ${cop(v.price)}</div>
-            <div class="qty" role="group" aria-label="Cantidad de ${p.name}">
+            <h3>${b.name}</h3>
+            <div class="variant">${cop(b.price)} c/u</div>
+            <div class="qty" role="group" aria-label="Cantidad de ${b.name}">
               <button type="button" data-dec="${i}" aria-label="Quitar una">−</button>
               <span>${l.qty}</span>
               <button type="button" data-inc="${i}" aria-label="Agregar una">+</button>
             </div>
           </div>
-          <div class="amount">${cop(total)}</div>
+          <div class="amount">${cop(lineTotal(l))}</div>
         </div>`;
-    }).join("") + `<div class="summary"><span>Subtotal</span><span>${cop(cartTotal())}</span></div>
+    }).join("") + chosenHTML() + `<div class="summary"><span>Subtotal</span><span>${cop(cartTotal())}</span></div>
       <p class="ship-note">El domicilio se cotiza según tu dirección y te lo confirmamos por WhatsApp.</p>`;
   }
   function renderDrawer() {
     if (!state.cart.length) {
-      $("drawerBody").innerHTML = `<div class="empty"><p>Tu carrito está vacío. Elige tus galletas favoritas para empezar.</p>
-        <a class="pill-gold" href="#galletas" data-close>Ver galletas</a></div>`;
+      $("drawerBody").innerHTML = `<div class="empty"><p>Tu carrito está vacío. Elige una caja de 4, 6 u 8 galletas para empezar.</p>
+        <a class="pill-gold" href="#galletas" data-close>Ver cajas</a></div>${state.flavors.length ? chosenHTML() : ""}`;
       return;
     }
     $("drawerBody").innerHTML = `
@@ -795,13 +800,21 @@
         <div class="field"><label for="f-name">Nombre</label><input id="f-name" name="name" autocomplete="name"><div class="error" id="e-name"></div></div>
         <div class="field"><label for="f-address">Dirección de entrega</label><input id="f-address" name="address" autocomplete="street-address"><div class="error" id="e-address"></div></div>
         <div class="field"><label for="f-date">Fecha de entrega</label><input id="f-date" name="date" type="date" min="${minDate()}"><div class="error" id="e-date"></div></div>
-        <div class="field"><label for="f-notes">Notas (opcional)</label><textarea id="f-notes" name="notes" rows="2" placeholder="Sabores de tu caja surtida, mensaje de la tarjeta…"></textarea></div>
+        <div class="field"><label for="f-notes">Notas (opcional)</label><textarea id="f-notes" name="notes" rows="2" placeholder="Cuántas de cada sabor, mensaje para el regalo…"></textarea></div>
         <button class="pill-gold btn-wa" type="submit">Enviar pedido por WhatsApp</button>
       </form>`;
   }
   $("drawerBody").addEventListener("click", e => {
     if (e.target.closest("[data-close]")) { closeCart(); return; }
-    if (e.target.id === "clearCart") { state.cart = []; save(); renderBadge(); renderDrawer(); $("closeCart").focus(); return; }
+    if (e.target.id === "clearCart") { state.cart = []; state.flavors = []; save(); renderBadge(); renderGrid(); renderDrawer(); $("closeCart").focus(); return; }
+    const un = e.target.closest("[data-unpick]");
+    if (un) {
+      state.flavors = state.flavors.filter(x => x !== un.dataset.unpick);
+      save(); renderGrid();
+      if ($("lines")) $("lines").innerHTML = linesHTML(); else renderDrawer();
+      $("closeCart").focus();
+      return;
+    }
     const inc = e.target.closest("[data-inc]"), dec = e.target.closest("[data-dec]");
     if (!inc && !dec) return;
     const i = Number(inc ? inc.dataset.inc : dec.dataset.dec);
@@ -836,7 +849,8 @@
     const f = k => form.elements[k].value.trim();
     const text = [
       `Hola ${BRAND}, quiero hacer este pedido:`,
-      ...state.cart.map(l => { const { p, v, total } = lineInfo(l); return `• ${l.qty} × ${p.name} (${v.label}) — ${cop(total)}`; }),
+      ...state.cart.map(l => `• ${l.qty} × ${boxById[l.id].name} — ${cop(lineTotal(l))}`),
+      `Sabores: ${state.flavors.length ? flavorNames().join(", ") : "los elijo por este chat"}`,
       `Subtotal: ${cop(cartTotal())}`,
       `Nombre: ${f("name")}`,
       `Dirección: ${f("address")}`,
@@ -853,7 +867,7 @@
       $("drawerBody").innerHTML = `<div class="empty"><h3>Pega tu pedido en WhatsApp</h3>
         <p id="copyMsg">Abrimos nuestro chat de WhatsApp. Copia este mensaje y envíalo para confirmar tu pedido.</p>
         <label class="sr-only" for="orderText">Mensaje del pedido</label>
-        <textarea id="orderText" readonly rows="9" style="width:100%;border:1.5px solid var(--line);border-radius:12px;padding:10px;background:var(--paper);font-size:.86rem;margin:6px 0 12px"></textarea>
+        <textarea id="orderText" readonly rows="10" style="width:100%;border:1.5px solid var(--line);border-radius:12px;padding:10px;background:var(--paper);font-size:.86rem;margin:6px 0 12px"></textarea>
         <div style="display:grid;gap:10px">
           <button class="pill-gold" type="button" id="copyOrder">Copiar pedido</button>
           <a class="pill-gold btn-wa" href="${WHATSAPP_LINK}" target="_blank" rel="noopener">Abrir WhatsApp</a>
