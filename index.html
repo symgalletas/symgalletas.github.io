@@ -25,7 +25,9 @@
   "servesCuisine": "Galletas estilo Nueva York",
   "image": "img/hero.jpg",
   "priceRange": "$$",
-  "currenciesAccepted": "COP"
+  "currenciesAccepted": "COP",
+  "areaServed": "Medellín",
+  "sameAs": ["https://www.instagram.com/symgalletas/", "https://www.tiktok.com/@symgalletas"]
 }
 </script>
 <style>
@@ -389,7 +391,7 @@
     <div class="wrap">
       <p class="eyebrow">Envíos</p>
       <h2 class="section-title" id="entregas">Entregas a domicilio</h2>
-      <p class="section-sub">Llevamos tus galletas recién horneadas a tu casa, oficina o celebración.</p>
+      <p class="section-sub">Llevamos tus galletas recién horneadas a tu casa, oficina o celebración en Medellín. Hechas con amor, hechas para compartir.</p>
       <div class="facts">
         <div class="fact">
           <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M8 18h24v14a3 3 0 0 1-3 3H11a3 3 0 0 1-3-3z"/><path d="M14 18v-3a6 6 0 0 1 12 0v3M20 6V3M12 9l-2-2M28 9l2-2"/></svg>
@@ -398,8 +400,8 @@
         </div>
         <div class="fact">
           <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="8" width="30" height="27" rx="4"/><path d="M5 16h30M13 4v8M27 4v8"/></svg>
-          <h3>Pide con un día de anticipación</h3>
-          <p>Recibimos pedidos hasta el día anterior a la entrega, de lunes a sábado.</p>
+          <h3>Pide con dos días de anticipación</h3>
+          <p>Así horneamos tu pedido a tiempo. Escríbenos por WhatsApp para reservar tu fecha.</p>
         </div>
         <div class="fact">
           <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h20v16H3zM23 16h8l6 6v4H23z"/><circle cx="10" cy="29" r="3.2" fill="#FFFBF5"/><circle cx="30" cy="29" r="3.2" fill="#FFFBF5"/></svg>
@@ -501,16 +503,17 @@
 <script>
 (() => {
   // ---------- Configuración ----------
-  // WhatsApp en formato internacional sin "+" (ej. "573001234567").
-  // Si queda vacío, el enlace abre WhatsApp para elegir el contacto.
+  // WHATSAPP: número internacional sin "+" (ej. "573001234567"); permite precargar el pedido en el chat.
+  // WHATSAPP_LINK: enlace corto de WhatsApp Business (Linktree de @symgalletas). No admite texto
+  // precargado, así que el pedido se copia para que el cliente lo pegue.
   const WHATSAPP = "";
+  const WHATSAPP_LINK = "https://wa.me/message/ML43LEBW3JSVJ1";
   const BRAND = "Cookie New York Style";
-  // Reemplazar por las cuentas reales de la marca.
   const SOCIAL = {
-    instagram: "https://www.instagram.com/",
-    facebook: "https://www.facebook.com/",
-    tiktok: "https://www.tiktok.com/",
+    instagram: "https://www.instagram.com/symgalletas/",
+    tiktok: "https://www.tiktok.com/@symgalletas",
   };
+  const LEAD_DAYS = 2; // pedidos con dos días de anticipación
 
   const CATEGORIES = [
     { id: "clasicas", name: "Clásicas" },
@@ -649,7 +652,10 @@
   const cartUnits = () => state.cart.reduce((s, l) => s + l.qty, 0);
 
   const $ = id => document.getElementById(id);
-  const waLink = text => `https://wa.me/${WHATSAPP}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
+  const canPrefill = Boolean(WHATSAPP || !WHATSAPP_LINK);
+  const waLink = text => canPrefill
+    ? `https://wa.me/${WHATSAPP}${text ? `?text=${encodeURIComponent(text)}` : ""}`
+    : WHATSAPP_LINK;
 
   // ---------- Render estático ----------
   $("sabores").innerHTML = STRIP.map(id => {
@@ -757,7 +763,7 @@
     $("headerTotal").textContent = cop(cartTotal());
   }
   function minDate() {
-    const d = new Date(); d.setDate(d.getDate() + 1);
+    const d = new Date(); d.setDate(d.getDate() + LEAD_DAYS);
     const pad = n => String(n).padStart(2, "0");
     return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
   }
@@ -815,7 +821,7 @@
   const MESSAGES = {
     name: "Escribe tu nombre para saber a quién entregar.",
     address: "Escribe la dirección donde recibirás el pedido.",
-    date: "Elige una fecha a partir de mañana.",
+    date: "Elige una fecha con al menos dos días de anticipación.",
   };
   $("drawerBody").addEventListener("submit", e => {
     e.preventDefault();
@@ -842,10 +848,43 @@
       f("notes") ? `Notas: ${f("notes")}` : "",
     ].filter(Boolean).join("\n");
     window.open(waLink(text), "_blank", "noopener");
-    $("drawerBody").innerHTML = `<div class="empty"><h3>Pedido listo en WhatsApp</h3>
-      <p>Envía el mensaje que abrimos en WhatsApp para confirmar tu pedido. Tu carrito se mantiene hasta que lo vacíes.</p>
-      <button class="pill-gold" type="button" id="clearCart">Vaciar carrito</button></div>`;
+    if (canPrefill) {
+      $("drawerBody").innerHTML = `<div class="empty"><h3>Pedido listo en WhatsApp</h3>
+        <p>Envía el mensaje que abrimos en WhatsApp para confirmar tu pedido. Tu carrito se mantiene hasta que lo vacíes.</p>
+        <button class="pill-gold" type="button" id="clearCart">Vaciar carrito</button></div>`;
+    } else {
+      // El enlace de WhatsApp Business no recibe texto: dejamos el pedido listo para pegar.
+      $("drawerBody").innerHTML = `<div class="empty"><h3>Pega tu pedido en WhatsApp</h3>
+        <p id="copyMsg">Abrimos nuestro chat de WhatsApp. Copia este mensaje y envíalo para confirmar tu pedido.</p>
+        <label class="sr-only" for="orderText">Mensaje del pedido</label>
+        <textarea id="orderText" readonly rows="9" style="width:100%;border:1.5px solid var(--line);border-radius:12px;padding:10px;background:var(--paper);font-size:.86rem;margin:6px 0 12px"></textarea>
+        <div style="display:grid;gap:10px">
+          <button class="pill-gold" type="button" id="copyOrder">Copiar pedido</button>
+          <a class="pill-gold btn-wa" href="${WHATSAPP_LINK}" target="_blank" rel="noopener">Abrir WhatsApp</a>
+          <button class="linkish" type="button" id="clearCart" style="background:none;border:0;text-decoration:underline;cursor:pointer;color:var(--ink-soft)">Vaciar carrito</button>
+        </div></div>`;
+      $("orderText").value = text;
+      copyText(text).then(ok => {
+        if (ok) $("copyMsg").textContent = "Copiamos tu pedido. Pégalo en el chat de WhatsApp que abrimos y envíalo para confirmar.";
+      });
+    }
     $("closeCart").focus();
+  });
+  async function copyText(text) {
+    try { await navigator.clipboard.writeText(text); return true; }
+    catch (_) {
+      const t = $("orderText");
+      if (!t) return false;
+      t.select();
+      try { return document.execCommand("copy"); } catch (_) { return false; }
+    }
+  }
+  $("drawerBody").addEventListener("click", e => {
+    if (e.target.id !== "copyOrder") return;
+    copyText($("orderText").value).then(ok => {
+      $("copyMsg").textContent = ok ? "Pedido copiado. Pégalo en el chat de WhatsApp."
+        : "No pudimos copiar automáticamente. Selecciona el texto y cópialo.";
+    });
   });
 
   let lastFocus = null;
