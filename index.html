@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cookie New York Style | Galletas estilo Nueva York a domicilio</title>
+<meta name="description" content="Galletas estilo Nueva York grandes, suaves e irresistibles: clásica, cookies & cream, lotus, red velvet, pistacho y más. Pide por unidad o en caja a domicilio.">
+<meta property="og:title" content="Cookie New York Style | Galletas estilo Nueva York">
+<meta property="og:description" content="Galletas grandes, momentos más grandes.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/hero.jpg">
+<meta property="og:locale" content="es_CO">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 4a28 28 0 1 0 28 28 8 8 0 0 1-8-8 8 8 0 0 1-8-8 8 8 0 0 1-8-8 4 4 0 0 1-4-4z' fill='%23E3AE5F' stroke='%23C58C3B' stroke-width='2.5'/%3E%3Cg fill='%233A2518'%3E%3Ccircle cx='20' cy='24' r='4'/%3E%3Ccircle cx='34' cy='38' r='4.6'/%3E%3Ccircle cx='19' cy='42' r='3.2'/%3E%3Ccircle cx='45' cy='44' r='3'/%3E%3Ccircle cx='31' cy='19' r='2.6'/%3E%3Ccircle cx='26' cy='52' r='2.4'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="img/clasica.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@500;600;700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "Cookie New York Style",
+  "slogan": "Galletas grandes, momentos más grandes.",
+  "description": "Galletas estilo Nueva York por unidad y en cajas de 4, 6 y 12.",
+  "servesCuisine": "Galletas estilo Nueva York",
+  "image": "img/hero.jpg",
+  "priceRange": "$$",
+  "currenciesAccepted": "COP"
+}
+</script>
+<style>
+  :root {
+    --choco: #1F130C;
+    --choco-2: #2C1B11;
+    --choco-3: #3A2518;
+    --cream: #F7EFE3;
+    --paper: #FFFBF5;
+    --gold: #E3AE5F;
+    --gold-dark: #C58C3B;
+    --ink: #2C1B11;
+    --ink-soft: #6E5546;
+    --cream-text: #F3E7D6;
+    --line: #E8DCCB;
+    --wa: #25D366;
+    --display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+    --body: "Poppins", "Helvetica Neue", Arial, sans-serif;
+    --script: "Dancing Script", "Brush Script MT", cursive;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+  body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--body); font-size: 1rem; line-height: 1.6; }
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+  .wrap { width: min(1240px, 100% - 32px); margin-inline: auto; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  h1, h2, h3 { font-family: var(--display); line-height: 1.1; }
+
+  .pill-gold {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--gold); color: var(--choco); border: 0; border-radius: 999px;
+    padding: 13px 26px; font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: .82rem;
+    text-decoration: none; cursor: pointer; transition: background .15s ease;
+  }
+  .pill-gold:hover { background: #EDBF77; }
+  .pill-gold svg { width: 18px; height: 18px; }
+
+  /* ---------- Logo ---------- */
+  .logo { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--cream-text); }
+  .logo svg { width: 58px; height: 58px; flex: none; }
+  .logo-text { display: flex; flex-direction: column; line-height: .95; }
+  .logo-text strong { font-family: var(--script); font-weight: 700; font-size: 2.5rem; color: var(--cream-text); }
+  .logo-text small { font-family: var(--display); font-weight: 600; font-size: .7rem; letter-spacing: .2em; color: var(--gold); margin-top: 2px; }
+
+  /* ---------- Header ---------- */
+  .topbar { background: var(--choco); position: sticky; top: 0; z-index: 30; border-bottom: 1px solid rgba(227,174,95,.15); }
+  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 80px; gap: 16px; }
+  .mainnav { display: flex; gap: 34px; }
+  .mainnav a { color: var(--cream-text); text-decoration: none; font-weight: 500; font-size: .92rem; padding: 6px 0; border-bottom: 2px solid transparent; }
+  .mainnav a:hover, .mainnav a[aria-current="page"] { border-bottom-color: var(--gold); }
+  .tools { display: flex; align-items: center; gap: 10px; color: var(--cream-text); }
+  .icon-btn { width: 44px; height: 44px; border-radius: 50%; border: 0; background: transparent; color: var(--gold); display: grid; place-items: center; cursor: pointer; position: relative; }
+  .icon-btn:hover { background: rgba(227,174,95,.12); }
+  .icon-btn svg { width: 26px; height: 26px; }
+  .cart-badge { position: absolute; top: 2px; right: 0; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 999px; background: var(--gold); color: var(--choco); font-size: .7rem; font-weight: 700; display: grid; place-items: center; }
+  .cart-total { font-weight: 600; font-size: .9rem; font-variant-numeric: tabular-nums; }
+  .topbar .search-row { display: none; padding: 0 0 16px; min-height: 0; }
+  .topbar .search-row.open { display: block; }
+  .search-row input { width: 100%; border: 1.5px solid rgba(227,174,95,.5); border-radius: 999px; padding: 11px 20px; background: var(--choco-2); color: var(--cream-text); }
+  .search-row input::placeholder { color: #B9A48F; }
+  .search-row input:focus { outline: none; border-color: var(--gold); }
+  @media (max-width: 960px) { .mainnav { display: none; } .cart-total { display: none; } }
+  @media (max-width: 420px) { .logo svg { width: 46px; height: 46px; } .logo-text strong { font-size: 2rem; } }
+
+  /* ---------- Hero ---------- */
+  .hero { position: relative; background: var(--choco); overflow: hidden; color: var(--cream-text); }
+  .hero-photo { position: absolute; inset: 0 0 0 38%; background: url("img/hero.jpg") center / cover no-repeat; }
+  .hero-photo::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--choco) 0%, rgba(31,19,12,.65) 18%, rgba(31,19,12,0) 45%); }
+  .hero .wrap { position: relative; min-height: clamp(420px, 34vw, 520px); display: flex; align-items: center; }
+  .hero-copy { padding: 48px 0; max-width: 560px; }
+  .kicker, .subline { font-family: var(--display); font-weight: 600; text-transform: uppercase; color: var(--cream-text); margin: 0; }
+  .kicker { letter-spacing: .42em; font-size: clamp(.9rem, 1.4vw, 1.15rem); }
+  .hero h1 { margin: 8px 0 14px; font-weight: 900; text-transform: uppercase; font-size: clamp(3.6rem, 9vw, 7rem); line-height: .9; letter-spacing: -.01em; }
+  .hero h1 span { display: block; }
+  .hero h1 .gold { color: var(--gold); padding-left: .45em; }
+  .subline { letter-spacing: .3em; font-size: clamp(.78rem, 1.2vw, 1rem); margin-bottom: 30px; }
+  @media (max-width: 820px) {
+    .hero-photo { inset: 0; }
+    .hero-photo::before { background: linear-gradient(0deg, var(--choco) 8%, rgba(31,19,12,.82) 55%, rgba(31,19,12,.45) 100%); }
+    .hero .wrap { min-height: 520px; align-items: flex-end; }
+    .hero h1 .gold { padding-left: 0; }
+  }
+
+  /* ---------- Flavor strip ---------- */
+  .strip { background: var(--cream); display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; padding: 8px 0 0; }
+  .strip a { display: block; text-decoration: none; text-align: center; padding-bottom: 14px; }
+  .strip .ph { aspect-ratio: 16 / 9; background: var(--paper) center / cover no-repeat; }
+  .strip .label { display: inline-block; margin-top: -14px; position: relative; background: #EED9B8; color: var(--choco); font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: .82rem; padding: 6px 26px; border-radius: 999px; }
+  .strip a:hover .label { background: var(--gold); }
+  @media (max-width: 760px) {
+    .strip { grid-template-columns: repeat(5, 62%); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .strip a { scroll-snap-align: start; }
+  }
+
+  /* ---------- Sections ---------- */
+  .section { padding: clamp(52px, 7vw, 88px) 0; }
+  .eyebrow { text-align: center; margin: 0 0 6px; font-family: var(--display); font-weight: 600; letter-spacing: .32em; text-transform: uppercase; font-size: .8rem; color: var(--gold-dark); }
+  .section-title { text-align: center; margin: 0 0 10px; font-size: clamp(1.7rem, 3.4vw, 2.6rem); font-weight: 800; text-transform: uppercase; color: var(--ink); }
+  .section-sub { text-align: center; margin: 0 auto 36px; max-width: 44rem; color: var(--ink-soft); }
+  .dark { background: var(--choco-2); color: var(--cream-text); }
+  .dark .section-title { color: var(--cream-text); }
+  .dark .section-sub { color: #CDBBA6; }
+  .dark .eyebrow { color: var(--gold); }
+
+  /* ---------- Product card ---------- */
+  .card { position: relative; background: var(--paper); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; text-align: center; border: 1px solid var(--line); scroll-margin-top: 100px; }
+  .card-media { position: relative; aspect-ratio: 4 / 3; background: radial-gradient(circle at 50% 45%, #FFF7EA 0 40%, #F1E2CB 100%); display: grid; place-items: center; overflow: hidden; }
+  .card-media > svg { width: 74%; height: 92%; }
+  .card-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .tag { position: absolute; top: 12px; left: 12px; z-index: 1; background: var(--choco); color: var(--gold); font-family: var(--display); font-weight: 700; font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; padding: 5px 12px; border-radius: 999px; }
+  .card-body { padding: 16px 16px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .card h3 { margin: 0; font-size: 1rem; font-weight: 800; text-transform: uppercase; letter-spacing: .03em; }
+  .card .desc { margin: 0; font-size: .88rem; line-height: 1.5; color: var(--ink-soft); }
+  .card .price { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .card .controls { margin-top: auto; display: grid; gap: 8px; padding-top: 6px; }
+  .card select { width: 100%; border: 1.5px solid var(--line); border-radius: 999px; padding: 9px 14px; background: var(--cream); font-size: .86rem; cursor: pointer; }
+  .card .pill-gold { width: 100%; padding: 11px 16px; font-size: .76rem; }
+  .dark .card { border-color: transparent; color: var(--ink); }
+
+  /* Carousel */
+  .carousel { position: relative; }
+  .track { position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 3 * 20px) / 4); gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 2px 12px; scrollbar-width: none; }
+  .track::-webkit-scrollbar { display: none; }
+  .track > * { scroll-snap-align: start; }
+  .car-btn { position: absolute; top: 34%; width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--gold); color: var(--choco); cursor: pointer; display: grid; place-items: center; z-index: 2; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
+  .car-btn svg { width: 18px; height: 18px; }
+  .car-btn.prev { left: -22px; } .car-btn.next { right: -22px; }
+  @media (max-width: 1100px) { .track { grid-auto-columns: calc((100% - 2 * 20px) / 3); } }
+  @media (max-width: 760px) { .track { grid-auto-columns: 78%; } .car-btn { display: none; } }
+
+  /* Recommended */
+  .rec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .rec { display: grid; grid-template-columns: 1.1fr 1fr; text-align: left; }
+  .rec .card-media { aspect-ratio: auto; min-height: 300px; }
+  .rec .card-body { padding: 28px; justify-content: center; }
+  .rec h3 { font-size: 1.35rem; }
+  @media (max-width: 900px) { .rec-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 540px) { .rec { grid-template-columns: 1fr; } .rec .card-media { min-height: 220px; } }
+
+  /* Catalog */
+  .filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; }
+  .filters button { border: 1.5px solid var(--line); background: var(--paper); border-radius: 999px; padding: 9px 20px; cursor: pointer; font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; font-size: .76rem; }
+  .filters button[aria-pressed="true"] { background: var(--choco); color: var(--gold); border-color: var(--choco); }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 760px) { .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } .grid .desc { display: none; } .grid .card-body { padding: 12px; } }
+  .no-results { text-align: center; grid-column: 1 / -1; padding: 24px; }
+
+  /* Custom boxes band */
+  .band { background: var(--gold); color: var(--choco); border-radius: 26px; padding: clamp(28px, 5vw, 56px); display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: center; }
+  .band h2 { margin: 0 0 10px; font-size: clamp(1.6rem, 3.4vw, 2.4rem); font-weight: 900; text-transform: uppercase; }
+  .band p { margin: 0 0 8px; font-size: 1.05rem; }
+  .band .note { font-weight: 600; }
+  .band .actions { display: flex; justify-content: flex-end; }
+  .btn-choco { background: var(--choco); color: var(--cream-text); border-radius: 999px; padding: 15px 30px; font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; text-decoration: none; display: inline-flex; gap: 10px; align-items: center; }
+  .btn-choco svg { width: 20px; height: 20px; color: var(--wa); }
+  @media (max-width: 800px) { .band { grid-template-columns: 1fr; } .band .actions { justify-content: flex-start; } }
+
+  /* Delivery facts */
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .fact { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 28px; }
+  .fact svg { width: 42px; height: 42px; color: var(--gold-dark); margin-bottom: 12px; }
+  .fact h3 { margin: 0 0 6px; font-size: 1.02rem; text-transform: uppercase; letter-spacing: .03em; }
+  .fact p { margin: 0; color: var(--ink-soft); }
+  @media (max-width: 800px) { .facts { grid-template-columns: 1fr; } }
+
+  /* FAQ */
+  .faq { max-width: 820px; margin: 0 auto; }
+  .faq details { border-bottom: 1px solid var(--line); padding: 4px 0; }
+  .faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; font-family: var(--display); font-weight: 700; font-size: 1.02rem; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; color: var(--gold-dark); font-size: 1.4rem; line-height: 1; }
+  .faq details[open] summary::after { content: "−"; }
+  .faq p { margin: 0 0 16px; color: var(--ink-soft); }
+
+  /* Footer */
+  .footer { background: var(--choco); color: var(--cream-text); padding: 56px 0 28px; }
+  .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.5fr; }
+  .footer-grid > div { padding: 0 32px; }
+  .footer-grid > div:first-child { padding-left: 0; }
+  .footer-grid > div + div { border-left: 1px solid rgba(227,174,95,.22); }
+  .footer h3 { color: var(--gold); font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 14px; font-weight: 700; }
+  .footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: .92rem; }
+  .footer a { text-decoration: none; }
+  .footer a:hover { color: var(--gold); }
+  .footer .tagline { margin: 16px 0 0; }
+  .social { display: flex; gap: 12px; margin-bottom: 22px; }
+  .social a { width: 40px; height: 40px; border-radius: 50%; background: var(--gold); color: var(--choco); display: grid; place-items: center; }
+  .social a:hover { background: #EDBF77; color: var(--choco); }
+  .social svg { width: 20px; height: 20px; }
+  .news label.title { display: block; font-family: var(--display); font-weight: 700; font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; }
+  .news .row { display: flex; border: 1.5px solid rgba(243,231,214,.35); border-radius: 999px; overflow: hidden; }
+  .news input[type=email] { flex: 1; min-width: 0; background: transparent; border: 0; padding: 12px 18px; color: var(--cream-text); }
+  .news input[type=email]::placeholder { color: #A8917C; }
+  .news input[type=email]:focus { outline: none; }
+  .news .row:focus-within { border-color: var(--gold); }
+  .news button { border: 0; background: var(--gold); color: var(--choco); width: 54px; cursor: pointer; display: grid; place-items: center; }
+  .news button svg { width: 20px; height: 20px; }
+  .news .consent { display: flex; gap: 8px; align-items: flex-start; font-size: .8rem; margin-top: 10px; color: #CDBBA6; }
+  .news .consent input { margin-top: 3px; accent-color: var(--gold); }
+  .news .msg { font-size: .85rem; margin-top: 8px; min-height: 1.3em; }
+  .legal { border-top: 1px solid rgba(227,174,95,.18); margin-top: 40px; padding-top: 18px; font-size: .82rem; color: #B9A48F; }
+  @media (max-width: 900px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; row-gap: 32px; }
+    .footer-grid > div { padding: 0; border: 0 !important; }
+    .footer-grid > div:first-child, .footer-grid > div:last-child { grid-column: 1 / -1; }
+  }
+
+  /* WhatsApp float */
+  .wa-float { position: fixed; right: 18px; bottom: 18px; z-index: 35; width: 58px; height: 58px; border-radius: 50%; background: var(--wa); display: grid; place-items: center; box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+  .wa-float svg { width: 32px; height: 32px; color: #fff; }
+
+  /* Cart drawer */
+  .scrim { position: fixed; inset: 0; background: rgba(31,19,12,.55); z-index: 40; opacity: 0; pointer-events: none; transition: opacity .2s ease; }
+  .scrim.open { opacity: 1; pointer-events: auto; }
+  .drawer { position: fixed; top: 0; right: 0; bottom: 0; z-index: 50; width: min(440px, 100%); background: var(--cream); display: flex; flex-direction: column;
+    transform: translateX(100%); visibility: hidden; transition: transform .28s cubic-bezier(.2,.8,.2,1), visibility 0s linear .28s; }
+  .drawer.open { transform: none; visibility: visible; transition-delay: 0s; }
+  .drawer-head { display: flex; justify-content: space-between; align-items: center; padding: 18px 22px; background: var(--choco); color: var(--cream-text); }
+  .drawer-head h2 { margin: 0; font-size: 1.2rem; text-transform: uppercase; letter-spacing: .06em; }
+  .close { width: 38px; height: 38px; border-radius: 50%; border: 0; background: var(--gold); color: var(--choco); cursor: pointer; font-size: 1.05rem; }
+  .drawer-body { flex: 1; overflow-y: auto; padding: 18px 22px 28px; }
+  .line-item { display: grid; grid-template-columns: 68px 1fr auto; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .line-item .thumb { width: 68px; height: 68px; border-radius: 12px; background: #F1E2CB; display: grid; place-items: center; overflow: hidden; position: relative; }
+  .line-item .thumb svg { width: 86%; height: 86%; }
+  .line-item .thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .line-item h3 { margin: 0; font-size: .86rem; text-transform: uppercase; }
+  .line-item .variant { font-size: .84rem; color: var(--ink-soft); }
+  .qty { display: inline-flex; align-items: center; border: 1.5px solid var(--line); border-radius: 999px; margin-top: 4px; background: var(--paper); }
+  .qty button { width: 30px; height: 30px; border: 0; background: transparent; cursor: pointer; font-weight: 700; }
+  .qty span { min-width: 22px; text-align: center; font-variant-numeric: tabular-nums; }
+  .line-item .amount { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .summary { display: flex; justify-content: space-between; font-family: var(--display); font-weight: 800; font-size: 1.1rem; margin: 18px 0 4px; text-transform: uppercase; }
+  .ship-note { font-size: .86rem; margin: 0 0 20px; color: var(--ink-soft); }
+  .empty { text-align: center; padding: 32px 0; }
+  form .field { margin-bottom: 12px; }
+  .drawer form label { display: block; font-weight: 500; font-size: .9rem; margin-bottom: 4px; }
+  .drawer form input, .drawer form textarea { width: 100%; border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 12px; background: var(--paper); }
+  .drawer form input:focus, .drawer form textarea:focus { outline: none; border-color: var(--gold-dark); }
+  .drawer form input[aria-invalid="true"] { border-color: #B3372B; }
+  .error { color: #A8322A; font-size: .84rem; margin-top: 3px; }
+  .btn-wa { width: 100%; background: var(--wa); color: #fff; }
+  .btn-wa:hover { background: #1DA851; }
+
+  .toast { position: fixed; left: 50%; bottom: 90px; transform: translate(-50%, 30px); opacity: 0; visibility: hidden; background: var(--choco); color: var(--cream-text); border: 1px solid var(--gold); padding: 12px 20px; border-radius: 999px; z-index: 60; transition: opacity .2s, transform .2s, visibility .2s; max-width: calc(100% - 32px); text-align: center; }
+  .toast.show { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Cookie New York Style, inicio">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <path d="M32 4a28 28 0 1 0 28 28 8 8 0 0 1-8-8 8 8 0 0 1-8-8 8 8 0 0 1-8-8 4 4 0 0 1-4-4z" fill="#E3AE5F"/>
+        <path d="M32 4a28 28 0 1 0 28 28 8 8 0 0 1-8-8 8 8 0 0 1-8-8 8 8 0 0 1-8-8 4 4 0 0 1-4-4z" fill="none" stroke="#C58C3B" stroke-width="2.5"/>
+        <g fill="#3A2518"><circle cx="20" cy="24" r="4"/><circle cx="34" cy="38" r="4.6"/><circle cx="19" cy="42" r="3.2"/><circle cx="45" cy="44" r="3"/><circle cx="31" cy="19" r="2.6"/><circle cx="26" cy="52" r="2.4"/></g>
+      </svg>
+      <span class="logo-text"><strong>Cookie</strong><small>NEW YORK STYLE</small></span>
+    </a>
+    <nav class="mainnav" aria-label="Principal">
+      <a href="#inicio" aria-current="page">Inicio</a>
+      <a href="#galletas">Nuestras galletas</a>
+      <a href="#sabores">Sabores</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="tools">
+      <button class="icon-btn" type="button" id="searchToggle" aria-expanded="false" aria-controls="searchRow" aria-label="Buscar galletas">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <span class="cart-total" id="headerTotal">$0</span>
+      <button class="icon-btn" type="button" id="openCart" aria-haspopup="dialog" aria-controls="drawer" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h3l2.4 11.2a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.5L21 7H6"/><circle cx="10" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>
+        <span class="cart-badge" id="cartCount">0</span>
+        <span class="sr-only">Ver carrito</span>
+      </button>
+    </div>
+  </div>
+  <div class="wrap search-row" id="searchRow">
+    <label class="sr-only" for="search">Buscar galletas</label>
+    <input id="search" type="search" placeholder="Busca por sabor: pistacho, lotus, red velvet…">
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-photo" role="img" aria-label="Dos galletas New York partidas con chocolate derretido"></div>
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="kicker">Galletas estilo</p>
+        <h1 id="hero-title"><span>Nueva</span><span class="gold">York</span></h1>
+        <p class="subline">Grandes · Suaves · Irresistibles</p>
+        <a class="pill-gold" href="#galletas">Descubre nuestros sabores
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <nav class="strip" id="sabores" aria-label="Sabores destacados"></nav>
+
+  <section class="section" id="galletas" aria-labelledby="mas-vendidas">
+    <div class="wrap">
+      <p class="eyebrow">Las favoritas</p>
+      <h2 class="section-title" id="mas-vendidas">Galletas New York a domicilio</h2>
+      <p class="section-sub">Grandes de 170 g, con bordes dorados y el centro suave. Elige por unidad o en caja del mismo sabor.</p>
+      <div class="carousel">
+        <button class="car-btn prev" type="button" data-scroll="-1" aria-label="Ver anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m15 6-6 6 6 6"/></svg></button>
+        <div class="track" id="track"></div>
+        <button class="car-btn next" type="button" data-scroll="1" aria-label="Ver siguientes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" aria-labelledby="recomendadas">
+    <div class="wrap">
+      <p class="eyebrow">Recomendadas</p>
+      <h2 class="section-title" id="recomendadas">Para darte un gusto</h2>
+      <p class="section-sub">Las que más repiten nuestros clientes: caramelo especiado con trozos de galleta lotus y pistacho tostado con chocolate blanco.</p>
+      <div class="rec-grid" id="recGrid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="catalogo" aria-labelledby="seleccion">
+    <div class="wrap">
+      <p class="eyebrow">Catálogo</p>
+      <h2 class="section-title" id="seleccion">Todos nuestros sabores</h2>
+      <p class="section-sub">Clásicas, rellenas, de temporada y cajas para regalar.</p>
+      <div class="filters" id="filters" role="group" aria-label="Filtrar por categoría"></div>
+      <div class="grid" id="grid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="section" id="nosotros" aria-labelledby="personalizadas" style="padding-top:0">
+    <div class="wrap">
+      <div class="band">
+        <div>
+          <h2 id="personalizadas">Cajas personalizadas y regalos empresariales</h2>
+          <p>Armamos cajas con los sabores que elijas, tarjeta con tu mensaje y empaque para cumpleaños, eventos y regalos corporativos.</p>
+          <p class="note">Cotiza con mínimo 3 días de anticipación.</p>
+        </div>
+        <div class="actions">
+          <a class="btn-choco" id="quoteLink" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.7c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.8.8a3.2 3.2 0 0 0 2.1-1.5 2.6 2.6 0 0 0 .2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
+            Cotiza aquí
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="envios" aria-labelledby="entregas" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow">Envíos</p>
+      <h2 class="section-title" id="entregas">Entregas a domicilio</h2>
+      <p class="section-sub">Llevamos tus galletas recién horneadas a tu casa, oficina o celebración.</p>
+      <div class="facts">
+        <div class="fact">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M8 18h24v14a3 3 0 0 1-3 3H11a3 3 0 0 1-3-3z"/><path d="M14 18v-3a6 6 0 0 1 12 0v3M20 6V3M12 9l-2-2M28 9l2-2"/></svg>
+          <h3>Horneadas el mismo día</h3>
+          <p>Preparamos cada pedido en la mañana de la entrega para que llegue fresco.</p>
+        </div>
+        <div class="fact">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="8" width="30" height="27" rx="4"/><path d="M5 16h30M13 4v8M27 4v8"/></svg>
+          <h3>Pide con un día de anticipación</h3>
+          <p>Recibimos pedidos hasta el día anterior a la entrega, de lunes a sábado.</p>
+        </div>
+        <div class="fact">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h20v16H3zM23 16h8l6 6v4H23z"/><circle cx="10" cy="29" r="3.2" fill="#FFFBF5"/><circle cx="30" cy="29" r="3.2" fill="#FFFBF5"/></svg>
+          <h3>Domicilio según tu dirección</h3>
+          <p>Te confirmamos el valor del domicilio por WhatsApp antes del pago.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-title" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow">Ayuda</p>
+      <h2 class="section-title" id="faq-title">Preguntas frecuentes</h2>
+      <div class="faq">
+        <details>
+          <summary>¿Cómo hago mi pedido?</summary>
+          <p>Añade tus galletas al carrito, escribe tu nombre, dirección y fecha de entrega, y toca “Enviar pedido por WhatsApp”. Te respondemos para confirmar el pago y la hora.</p>
+        </details>
+        <details>
+          <summary>¿Puedo elegir los sabores de una caja surtida?</summary>
+          <p>Sí. Escribe los sabores en el campo de notas del pedido o cuéntanos por WhatsApp al confirmar.</p>
+        </details>
+        <details>
+          <summary>¿Cómo conservo las galletas?</summary>
+          <p>Guárdalas en un recipiente cerrado a temperatura ambiente. Para disfrutarlas tibias, caliéntalas unos segundos en el microondas.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto cuesta el domicilio?</summary>
+          <p>Depende de la dirección de entrega. Te lo confirmamos por WhatsApp antes de que pagues.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="contacto">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="#inicio">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4a28 28 0 1 0 28 28 8 8 0 0 1-8-8 8 8 0 0 1-8-8 8 8 0 0 1-8-8 4 4 0 0 1-4-4z" fill="#E3AE5F"/><g fill="#3A2518"><circle cx="20" cy="24" r="4"/><circle cx="34" cy="38" r="4.6"/><circle cx="19" cy="42" r="3.2"/><circle cx="45" cy="44" r="3"/><circle cx="31" cy="19" r="2.6"/></g></svg>
+          <span class="logo-text"><strong>Cookie</strong><small>NEW YORK STYLE</small></span>
+        </a>
+        <p class="tagline">Galletas grandes, momentos más grandes.</p>
+      </div>
+      <div>
+        <h3>Navegación</h3>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#galletas">Nuestras galletas</a></li>
+          <li><a href="#sabores">Sabores</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#" data-wa>Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Ayuda</h3>
+        <ul>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+          <li><a href="#envios">Envíos</a></li>
+          <li><a href="#faq">Cómo hacer tu pedido</a></li>
+          <li>Lunes a sábado, 8:00 a. m. a 5:00 p. m.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Síguenos</h3>
+        <div class="social" id="social"></div>
+        <form class="news" id="newsForm" novalidate>
+          <label class="title" for="newsEmail">Recibe novedades</label>
+          <div class="row">
+            <input id="newsEmail" type="email" autocomplete="email" placeholder="Tu correo electrónico">
+            <button type="submit" aria-label="Suscribirme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+          </div>
+          <label class="consent"><input type="checkbox" id="newsConsent"> Autorizo el uso de mi correo para recibir novedades y promociones.</label>
+          <div class="msg" id="newsMsg" role="status"></div>
+        </form>
+      </div>
+    </div>
+    <p class="legal">© <span id="year"></span> Cookie New York Style. Precios en pesos colombianos.</p>
+  </div>
+</footer>
+
+<a class="wa-float" href="#" data-wa target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.7c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.8.8a3.2 3.2 0 0 0 2.1-1.5 2.6 2.6 0 0 0 .2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+  <div class="drawer-head">
+    <h2 id="drawer-title">Tu carrito</h2>
+    <button class="close" type="button" id="closeCart" aria-label="Cerrar carrito">✕</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  // ---------- Configuración ----------
+  // WhatsApp en formato internacional sin "+" (ej. "573001234567").
+  // Si queda vacío, el enlace abre WhatsApp para elegir el contacto.
+  const WHATSAPP = "";
+  const BRAND = "Cookie New York Style";
+  // Reemplazar por las cuentas reales de la marca.
+  const SOCIAL = {
+    instagram: "https://www.instagram.com/",
+    facebook: "https://www.facebook.com/",
+    tiktok: "https://www.tiktok.com/",
+  };
+
+  const CATEGORIES = [
+    { id: "clasicas", name: "Clásicas" },
+    { id: "rellenas", name: "Rellenas" },
+    { id: "especiales", name: "Especiales" },
+    { id: "cajas", name: "Cajas" },
+    { id: "acompanantes", name: "Acompañantes" },
+  ];
+
+  // photo: foto real; sin foto se dibuja una ilustración con dough/edge/chunks.
+  const PRODUCTS = [
+    { id: "clasica", cat: "clasicas", name: "Clásica", price: 9500, tag: "Más vendida", photo: "img/clasica.jpg",
+      desc: "Mantequilla tostada y trozos grandes de chocolate semiamargo.", dough: "#D29A5C", edge: "#A86C35", chunks: ["#3B1F14", "#3B1F14", "#E9D3A6"] },
+    { id: "cookies-cream", cat: "clasicas", name: "Cookies & cream", price: 10500, photo: "img/cookies-cream.jpg",
+      desc: "Masa de vainilla con trozos de galleta de chocolate y chocolate blanco.", dough: "#E7CFA6", edge: "#B99A6B", chunks: ["#1E1715", "#1E1715", "#FFFFFF"] },
+    { id: "lotus", cat: "especiales", name: "Lotus", price: 11500, tag: "Especial", photo: "img/lotus.jpg",
+      desc: "Galleta especiada con trozos de galleta lotus y hilos de caramelo.", dough: "#C98A4E", edge: "#9A6331", chunks: ["#B06A2C", "#E2B57A"] },
+    { id: "red-velvet", cat: "rellenas", name: "Red velvet", price: 11000, tag: "Rellena", photo: "img/red-velvet.jpg",
+      desc: "Masa red velvet con chips de chocolate blanco y centro de queso crema.", dough: "#A3282F", edge: "#6E171C", chunks: ["#F7F0E6"] },
+    { id: "pistacho", cat: "especiales", name: "Pistacho", price: 12500, tag: "Especial", photo: "img/pistacho.jpg",
+      desc: "Pistacho tostado, crema de pistacho y trozos de chocolate blanco.", dough: "#C9B26A", edge: "#8F7B3A", chunks: ["#7E9A3C", "#FFF7E6"] },
+    { id: "doble-chocolate", cat: "clasicas", name: "Doble chocolate", price: 9500,
+      desc: "Masa de cacao al 70 % con trozos de chocolate blanco y oscuro.", dough: "#4E2D1F", edge: "#2F1A10", chunks: ["#F3E8D4", "#F3E8D4", "#24120A"] },
+    { id: "avellana", cat: "rellenas", name: "Tentación de avellana", price: 11500, tag: "Rellena",
+      desc: "Galleta de chocolate con corazón de crema de avellanas y cacao.", dough: "#8A5530", edge: "#5E361B", chunks: ["#2B150B", "#C99A62"] },
+    { id: "arequipe-sal", cat: "rellenas", name: "Arequipe y sal", price: 11000, tag: "Rellena",
+      desc: "Centro de arequipe, chips de caramelo y escamas de sal marina.", dough: "#D9A466", edge: "#A9713A", chunks: ["#B5651D", "#FFFFFF"] },
+    { id: "maracuya", cat: "especiales", name: "Maracuyá y chocolate blanco", price: 10500,
+      desc: "Ralladura de maracuyá y trozos de chocolate blanco.", dough: "#E2B75F", edge: "#B88A35", chunks: ["#FFF7E6", "#5B3A12"] },
+    { id: "caja-4", cat: "cajas", name: "Caja surtida x4", price: 40000, box: 4, tag: "Caja", photo: "img/clasica.jpg",
+      desc: "Cuatro galletas a tu gusto. Indícanos los sabores en las notas del pedido." },
+    { id: "caja-6", cat: "cajas", name: "Caja surtida x6", price: 58000, box: 6, tag: "Caja", photo: "img/red-velvet.jpg",
+      desc: "Seis galletas a tu gusto, en caja con cinta. Ideal para regalar." },
+    { id: "caja-12", cat: "cajas", name: "Caja surtida x12", price: 110000, box: 12, tag: "Caja", photo: "img/cookies-cream.jpg",
+      desc: "Doce galletas para compartir en la oficina o en familia." },
+    { id: "leche", cat: "acompanantes", name: "Leche fría 250 ml", price: 3500, simple: true, kind: "milk",
+      desc: "Leche entera fría para acompañar tu galleta." },
+    { id: "tarjeta", cat: "acompanantes", name: "Tarjeta de regalo", price: 3000, simple: true, kind: "card",
+      desc: "Tarjeta impresa con tu mensaje personalizado." },
+    { id: "vela", cat: "acompanantes", name: "Vela de cumpleaños", price: 1500, simple: true, kind: "candle",
+      desc: "Vela para convertir tu galleta en celebración." },
+  ];
+  const byId = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
+  const STRIP = ["clasica", "cookies-cream", "lotus", "red-velvet", "pistacho"];
+  const BEST = ["clasica", "red-velvet", "cookies-cream", "doble-chocolate", "arequipe-sal", "caja-6"];
+  const RECOMMENDED = ["lotus", "pistacho"];
+
+  const cop = n => "$" + n.toLocaleString("es-CO");
+  const round500 = n => Math.round(n / 500) * 500;
+  function variants(p) {
+    if (p.box || p.simple) return [{ key: "u", label: p.box ? `Caja x${p.box}` : "Unidad", price: p.price }];
+    return [
+      { key: "u", label: "Unidad", price: p.price },
+      { key: "x4", label: "Caja x4 (mismo sabor)", price: round500(p.price * 4 * .95) },
+      { key: "x6", label: "Caja x6 (mismo sabor)", price: round500(p.price * 6 * .9) },
+    ];
+  }
+  const priceLabel = p => {
+    const v = variants(p);
+    return v.length > 1 ? `${cop(v[0].price)} – ${cop(v[v.length - 1].price)}` : cop(v[0].price);
+  };
+
+  // ---------- Ilustraciones (solo productos sin foto) ----------
+  function rng(seed) {
+    return () => {
+      seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+      let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+  const hash = s => [...s].reduce((h, c) => (h * 31 + c.charCodeAt(0)) | 0, 7);
+  function blob(r, cx, cy, radius, points, wobble) {
+    const pts = [];
+    for (let i = 0; i < points; i++) {
+      const a = (i / points) * Math.PI * 2;
+      const d = radius * (1 - wobble / 2 + r() * wobble);
+      pts.push([cx + Math.cos(a) * d, cy + Math.sin(a) * d]);
+    }
+    let path = `M${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)}`;
+    for (let i = 0; i < pts.length; i++) {
+      const p0 = pts[(i - 1 + pts.length) % pts.length], p1 = pts[i], p2 = pts[(i + 1) % pts.length], p3 = pts[(i + 2) % pts.length];
+      const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
+      const c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+      path += `C${c1.map(v => v.toFixed(1))} ${c2.map(v => v.toFixed(1))} ${p2.map(v => v.toFixed(1))}`;
+    }
+    return path + "Z";
+  }
+  let gid = 0;
+  function cookieSVG(p) {
+    const r = rng(hash(p.id));
+    const g = `g${gid++}`;
+    let chunks = "";
+    const n = 11 + Math.floor(r() * 5);
+    for (let i = 0; i < n; i++) {
+      const a = r() * Math.PI * 2, d = Math.sqrt(r()) * 30;
+      const x = 50 + Math.cos(a) * d, y = 47 + Math.sin(a) * d * .8;
+      chunks += `<path d="${blob(r, x, y, 2.6 + r() * 3.6, 6, .8)}" fill="${p.chunks[Math.floor(r() * p.chunks.length)]}"/><path d="${blob(r, x - .8, y - .9, 1.1, 5, .5)}" fill="#fff" opacity=".22"/>`;
+    }
+    let cracks = "";
+    for (let i = 0; i < 6; i++) {
+      const a = r() * Math.PI * 2, d = 8 + r() * 26, l = 5 + r() * 9;
+      const x = 50 + Math.cos(a) * d, y = 47 + Math.sin(a) * d * .8;
+      cracks += `<path d="M${x.toFixed(1)},${y.toFixed(1)} q${(r() * 6 - 3).toFixed(1)},${(l / 2).toFixed(1)} ${(r() * 8 - 4).toFixed(1)},${l.toFixed(1)}" stroke="${p.edge}" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".5"/>`;
+    }
+    return `<svg viewBox="0 0 100 100" aria-hidden="true">
+      <defs><radialGradient id="${g}" cx="42%" cy="34%" r="70%"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></radialGradient></defs>
+      <ellipse cx="51" cy="86" rx="40" ry="7" fill="#2C1B11" opacity=".18"/>
+      <path d="${blob(r, 50, 52, 44, 20, .12)}" fill="${p.edge}"/>
+      <path d="${blob(r, 50, 47, 43, 20, .1)}" fill="${p.dough}"/>
+      <path d="${blob(r, 50, 47, 43, 20, .1)}" fill="url(#${g})"/>
+      ${cracks}${chunks}
+    </svg>`;
+  }
+  function extraSVG(p) {
+    if (p.kind === "milk") return `<svg viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="90" rx="24" ry="4" fill="#2C1B11" opacity=".15"/><path d="M30 18h40l-5 70H35z" fill="#fff" stroke="#E0D6CF" stroke-width="2"/><path d="M32 34h36l-3.8 54H35.8z" fill="#FAF7F2"/></svg>`;
+    if (p.kind === "card") return `<svg viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="84" rx="34" ry="4" fill="#2C1B11" opacity=".15"/><rect x="18" y="26" width="64" height="52" rx="4" fill="#E3AE5F" transform="rotate(-6 50 52)"/><rect x="20" y="24" width="64" height="52" rx="4" fill="#fff" stroke="#E8DCCB" stroke-width="1.5"/><path d="M52 40c-4-6-13-2-10 5 2 4 10 9 10 9s8-5 10-9c3-7-6-11-10-5z" fill="#C58C3B"/><path d="M32 62h40M38 68h28" stroke="#CDBBA6" stroke-width="2" stroke-linecap="round"/></svg>`;
+    return `<svg viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="88" rx="16" ry="3.5" fill="#2C1B11" opacity=".15"/><rect x="44" y="34" width="12" height="54" rx="3" fill="#3A2518"/><path d="M44 46l12-6M44 58l12-6M44 70l12-6M44 82l12-6" stroke="#E3AE5F" stroke-width="3"/><path d="M50 30v-4" stroke="#2C1B11" stroke-width="2"/><path d="M50 8c6 7 6 13 0 17-6-4-6-10 0-17z" fill="#FCB900"/><path d="M50 14c3 4 3 7 0 9-3-2-3-5 0-9z" fill="#FF6900"/></svg>`;
+  }
+  const media = p => p.photo ? `<img src="${p.photo}" alt="Galleta ${p.name}" loading="lazy">` : (p.kind ? extraSVG(p) : cookieSVG(p));
+
+  // ---------- Estado ----------
+  const state = { cart: [], filter: "all", query: "" };
+  try {
+    const saved = JSON.parse(localStorage.getItem("cookie-ny-cart") || "[]");
+    if (Array.isArray(saved)) state.cart = saved.flatMap(l => {
+      const p = l && byId[l.id];
+      const v = p && variants(p).find(x => x.key === l.v);
+      const q = Number(l.qty);
+      return v && Number.isInteger(q) && q > 0 && q < 100 ? [{ id: p.id, v: v.key, qty: q }] : [];
+    });
+  } catch (_) {}
+  const save = () => { try { localStorage.setItem("cookie-ny-cart", JSON.stringify(state.cart)); } catch (_) {} };
+  const lineInfo = l => { const p = byId[l.id]; const v = variants(p).find(x => x.key === l.v); return { p, v, total: v.price * l.qty }; };
+  const cartTotal = () => state.cart.reduce((s, l) => s + lineInfo(l).total, 0);
+  const cartUnits = () => state.cart.reduce((s, l) => s + l.qty, 0);
+
+  const $ = id => document.getElementById(id);
+  const waLink = text => `https://wa.me/${WHATSAPP}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
+
+  // ---------- Render estático ----------
+  $("sabores").innerHTML = STRIP.map(id => {
+    const p = byId[id];
+    return `<a href="#p-${id}" data-goto="${id}"><div class="ph" style="background-image:url('${p.photo}')" role="img" aria-label="Galleta ${p.name}"></div><span class="label">${p.name}</span></a>`;
+  }).join("");
+  $("filters").innerHTML = [{ id: "all", name: "Todas" }, ...CATEGORIES].map(c =>
+    `<button type="button" data-filter="${c.id}" aria-pressed="${c.id === "all"}">${c.name}</button>`).join("");
+  $("year").textContent = new Date().getFullYear();
+  document.querySelectorAll("[data-wa]").forEach(a => { a.href = waLink(`Hola ${BRAND}, quiero hacer un pedido.`); a.target = "_blank"; a.rel = "noopener"; });
+  $("quoteLink").href = waLink(`Hola ${BRAND}, quiero cotizar una caja personalizada.`);
+  const ICONS = {
+    instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>',
+    facebook: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8.5V6.8c0-.8.5-1 1-1h2V2.2h-2.8C11 2.2 10.3 4.4 10.3 6v2.5H8v3.7h2.3V22H14v-9.8h2.8l.4-3.7z"/></svg>',
+    tiktok: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2.1-2.8V9.1a6.3 6.3 0 1 0 5.5 6.3V8.6a7.7 7.7 0 0 0 4.4 1.4V6.6a4.5 4.5 0 0 1-4.4-4.6z"/></svg>',
+  };
+  $("social").innerHTML = Object.entries(SOCIAL).filter(([, url]) => url).map(([k, url]) =>
+    `<a href="${url}" target="_blank" rel="noopener" aria-label="${k[0].toUpperCase() + k.slice(1)}">${ICONS[k]}</a>`).join("");
+
+  function card(p, prefix, extra = "") {
+    const v = variants(p);
+    const select = v.length > 1
+      ? `<label class="sr-only" for="${prefix}v-${p.id}">Presentación de ${p.name}</label>
+         <select id="${prefix}v-${p.id}" data-variant>${v.map(x => `<option value="${x.key}">${x.label} · ${cop(x.price)}</option>`).join("")}</select>`
+      : "";
+    return `
+      <article class="card ${extra}" ${prefix === "g-" ? `id="p-${p.id}"` : ""}>
+        <div class="card-media">${p.tag ? `<span class="tag">${p.tag}</span>` : ""}${media(p)}</div>
+        <div class="card-body">
+          <h3>${p.name}</h3>
+          <p class="desc">${p.desc}</p>
+          <div class="price">${priceLabel(p)}</div>
+          <div class="controls">${select}<button class="pill-gold" type="button" data-add="${p.id}">Añadir al carrito<span class="sr-only">: ${p.name}</span></button></div>
+        </div>
+      </article>`;
+  }
+  $("track").innerHTML = BEST.map(id => card(byId[id], "b-")).join("");
+  $("recGrid").innerHTML = RECOMMENDED.map(id => card(byId[id], "r-", "rec")).join("");
+
+  function renderGrid() {
+    const q = state.query.trim().toLowerCase();
+    const items = PRODUCTS.filter(p =>
+      (state.filter === "all" || p.cat === state.filter) &&
+      (!q || (p.name + " " + p.desc).toLowerCase().includes(q)));
+    $("grid").innerHTML = items.length ? items.map(p => card(p, "g-")).join("")
+      : `<p class="no-results">No encontramos galletas con “${state.query.replace(/[<>&"]/g, "")}”. Prueba con otro sabor o mira todas las categorías.</p>`;
+    document.querySelectorAll("[data-filter]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.filter === state.filter)));
+  }
+  renderGrid();
+
+  // ---------- Navegación, filtros y búsqueda ----------
+  document.addEventListener("click", e => {
+    const f = e.target.closest("[data-filter]");
+    if (f) { state.filter = f.dataset.filter; renderGrid(); }
+    const g = e.target.closest("[data-goto]");
+    if (g) {
+      // Asegura que la tarjeta exista en la grilla antes de saltar a ella.
+      e.preventDefault();
+      state.filter = "all"; state.query = ""; $("search").value = ""; renderGrid();
+      const target = $(`p-${g.dataset.goto}`);
+      target.scrollIntoView({ block: "center" });
+      target.querySelector("[data-add]").focus({ preventScroll: true });
+    }
+  });
+  document.querySelectorAll("[data-scroll]").forEach(btn => btn.addEventListener("click", () => {
+    const t = $("track");
+    t.scrollBy({ left: Number(btn.dataset.scroll) * (t.clientWidth * .75), behavior: "smooth" });
+  }));
+  $("searchToggle").addEventListener("click", () => {
+    const row = $("searchRow"), open = !row.classList.contains("open");
+    row.classList.toggle("open", open);
+    $("searchToggle").setAttribute("aria-expanded", String(open));
+    if (open) $("search").focus();
+  });
+  $("search").addEventListener("input", e => { state.query = e.target.value; state.filter = "all"; renderGrid(); });
+  $("search").addEventListener("keydown", e => { if (e.key === "Enter") $("catalogo").scrollIntoView(); });
+
+  // ---------- Boletín ----------
+  $("newsForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const email = $("newsEmail").value.trim();
+    const msg = $("newsMsg");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = "Escribe un correo válido, por ejemplo nombre@correo.com."; $("newsEmail").focus(); return; }
+    if (!$("newsConsent").checked) { msg.textContent = "Marca la autorización para poder enviarte novedades."; $("newsConsent").focus(); return; }
+    // Punto de integración: enviar el correo a la herramienta de email marketing.
+    msg.textContent = "Listo. Te enviaremos nuestras novedades a ese correo.";
+    e.target.reset();
+  });
+
+  // ---------- Carrito ----------
+  document.addEventListener("click", e => {
+    const btn = e.target.closest("[data-add]");
+    if (!btn) return;
+    const p = byId[btn.dataset.add];
+    const sel = btn.closest(".card").querySelector("[data-variant]");
+    const key = sel ? sel.value : "u";
+    const line = state.cart.find(l => l.id === p.id && l.v === key);
+    if (line) line.qty = Math.min(99, line.qty + 1); else state.cart.push({ id: p.id, v: key, qty: 1 });
+    save(); renderBadge();
+    const v = variants(p).find(x => x.key === key);
+    toast(`${p.name} (${v.label.toLowerCase()}) añadida al carrito.`);
+  });
+  function renderBadge() {
+    $("cartCount").textContent = cartUnits();
+    $("headerTotal").textContent = cop(cartTotal());
+  }
+  function minDate() {
+    const d = new Date(); d.setDate(d.getDate() + 1);
+    const pad = n => String(n).padStart(2, "0");
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  }
+  function linesHTML() {
+    return state.cart.map((l, i) => {
+      const { p, v, total } = lineInfo(l);
+      return `
+        <div class="line-item">
+          <div class="thumb">${media(p)}</div>
+          <div>
+            <h3>${p.name}</h3>
+            <div class="variant">${v.label} · ${cop(v.price)}</div>
+            <div class="qty" role="group" aria-label="Cantidad de ${p.name}">
+              <button type="button" data-dec="${i}" aria-label="Quitar una">−</button>
+              <span>${l.qty}</span>
+              <button type="button" data-inc="${i}" aria-label="Agregar una">+</button>
+            </div>
+          </div>
+          <div class="amount">${cop(total)}</div>
+        </div>`;
+    }).join("") + `<div class="summary"><span>Subtotal</span><span>${cop(cartTotal())}</span></div>
+      <p class="ship-note">El domicilio se cotiza según tu dirección y te lo confirmamos por WhatsApp.</p>`;
+  }
+  function renderDrawer() {
+    if (!state.cart.length) {
+      $("drawerBody").innerHTML = `<div class="empty"><p>Tu carrito está vacío. Elige tus galletas favoritas para empezar.</p>
+        <a class="pill-gold" href="#galletas" data-close>Ver galletas</a></div>`;
+      return;
+    }
+    $("drawerBody").innerHTML = `
+      <div id="lines">${linesHTML()}</div>
+      <form id="checkout" novalidate>
+        <div class="field"><label for="f-name">Nombre</label><input id="f-name" name="name" autocomplete="name"><div class="error" id="e-name"></div></div>
+        <div class="field"><label for="f-address">Dirección de entrega</label><input id="f-address" name="address" autocomplete="street-address"><div class="error" id="e-address"></div></div>
+        <div class="field"><label for="f-date">Fecha de entrega</label><input id="f-date" name="date" type="date" min="${minDate()}"><div class="error" id="e-date"></div></div>
+        <div class="field"><label for="f-notes">Notas (opcional)</label><textarea id="f-notes" name="notes" rows="2" placeholder="Sabores de tu caja surtida, mensaje de la tarjeta…"></textarea></div>
+        <button class="pill-gold btn-wa" type="submit">Enviar pedido por WhatsApp</button>
+      </form>`;
+  }
+  $("drawerBody").addEventListener("click", e => {
+    if (e.target.closest("[data-close]")) { closeCart(); return; }
+    if (e.target.id === "clearCart") { state.cart = []; save(); renderBadge(); renderDrawer(); $("closeCart").focus(); return; }
+    const inc = e.target.closest("[data-inc]"), dec = e.target.closest("[data-dec]");
+    if (!inc && !dec) return;
+    const i = Number(inc ? inc.dataset.inc : dec.dataset.dec);
+    state.cart[i].qty = Math.min(99, state.cart[i].qty + (inc ? 1 : -1));
+    const removed = state.cart[i].qty <= 0;
+    if (removed) state.cart.splice(i, 1);
+    save(); renderBadge();
+    if (!state.cart.length) { renderDrawer(); $("closeCart").focus(); return; }
+    $("lines").innerHTML = linesHTML(); // conserva lo escrito en el formulario
+    const again = $("lines").querySelector(`[data-${inc ? "inc" : "dec"}="${removed ? Math.min(i, state.cart.length - 1) : i}"]`);
+    (again || $("closeCart")).focus();
+  });
+  const MESSAGES = {
+    name: "Escribe tu nombre para saber a quién entregar.",
+    address: "Escribe la dirección donde recibirás el pedido.",
+    date: "Elige una fecha a partir de mañana.",
+  };
+  $("drawerBody").addEventListener("submit", e => {
+    e.preventDefault();
+    const form = e.target;
+    let firstInvalid = null;
+    Object.keys(MESSAGES).forEach(key => {
+      const input = form.elements[key];
+      const value = input.value.trim();
+      const ok = value && (key !== "date" || value >= minDate());
+      input.setAttribute("aria-invalid", String(!ok));
+      input.setAttribute("aria-describedby", `e-${key}`);
+      $(`e-${key}`).textContent = ok ? "" : MESSAGES[key];
+      if (!ok && !firstInvalid) firstInvalid = input;
+    });
+    if (firstInvalid) { firstInvalid.focus(); return; }
+    const f = k => form.elements[k].value.trim();
+    const text = [
+      `Hola ${BRAND}, quiero hacer este pedido:`,
+      ...state.cart.map(l => { const { p, v, total } = lineInfo(l); return `• ${l.qty} × ${p.name} (${v.label}) — ${cop(total)}`; }),
+      `Subtotal: ${cop(cartTotal())}`,
+      `Nombre: ${f("name")}`,
+      `Dirección: ${f("address")}`,
+      `Fecha de entrega: ${f("date")}`,
+      f("notes") ? `Notas: ${f("notes")}` : "",
+    ].filter(Boolean).join("\n");
+    window.open(waLink(text), "_blank", "noopener");
+    $("drawerBody").innerHTML = `<div class="empty"><h3>Pedido listo en WhatsApp</h3>
+      <p>Envía el mensaje que abrimos en WhatsApp para confirmar tu pedido. Tu carrito se mantiene hasta que lo vacíes.</p>
+      <button class="pill-gold" type="button" id="clearCart">Vaciar carrito</button></div>`;
+    $("closeCart").focus();
+  });
+
+  let lastFocus = null;
+  function openCart() {
+    lastFocus = document.activeElement;
+    renderDrawer();
+    $("drawer").classList.add("open"); $("scrim").classList.add("open");
+    $("openCart").setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+    $("closeCart").focus();
+  }
+  function closeCart() {
+    $("drawer").classList.remove("open"); $("scrim").classList.remove("open");
+    $("openCart").setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+    if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
+  }
+  $("openCart").addEventListener("click", openCart);
+  $("closeCart").addEventListener("click", closeCart);
+  $("scrim").addEventListener("click", closeCart);
+  document.addEventListener("keydown", e => {
+    if (!$("drawer").classList.contains("open")) return;
+    if (e.key === "Escape") closeCart();
+    if (e.key === "Tab") {
+      const f = [...$("drawer").querySelectorAll("button, input, textarea, [href]")].filter(n => !n.disabled);
+      const first = f[0], last = f[f.length - 1];
+      if (!$("drawer").contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+      else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  let toastTimer;
+  function toast(msg) {
+    const t = $("toast");
+    t.textContent = msg; t.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove("show"), 2600);
+  }
+
+  renderBadge();
+})();
+</script>
+</body>
+</html>
