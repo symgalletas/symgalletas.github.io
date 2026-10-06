@@ -1,0 +1,13 @@
+{
+  "name": "S&M Galletas hechas con amor",
+  "short_name": "S&M Galletas",
+  "description": "Galletas tipo New York hechas con amor en Medellín.",
+  "lang": "es-CO",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7EDE1",
+  "theme_color": "#1F130C",
+  "icons": [
+    { "src": "img/logo.png", "sizes": "260x260", "type": "image/png" }
+  ]
+}

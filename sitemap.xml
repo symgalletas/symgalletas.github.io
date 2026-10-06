@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://symgalletas.github.io/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <image:image><image:loc>https://symgalletas.github.io/img/caja-x6.jpg</image:loc></image:image>
+    <image:image><image:loc>https://symgalletas.github.io/img/caja-x4.jpg</image:loc></image:image>
+    <image:image><image:loc>https://symgalletas.github.io/img/caja-x8.jpg</image:loc></image:image>
+    <image:image><image:loc>https://symgalletas.github.io/img/mini-x10.jpg</image:loc></image:image>
+    <image:image><image:loc>https://symgalletas.github.io/img/mini-x20.jpg</image:loc></image:image>
+    <image:image><image:loc>https://symgalletas.github.io/img/sabor-oreo.jpg</image:loc></image:image>
+    <image:image><image:loc>https://symgalletas.github.io/img/sabor-leche-klim.jpg</image:loc></image:image>
+    <image:image><image:loc>https://symgalletas.github.io/img/sabor-chocolatina-jet.jpg</image:loc></image:image>
+    <image:image><image:loc>https://symgalletas.github.io/img/sabor-milo.jpg</image:loc></image:image>
+    <image:image><image:loc>https://symgalletas.github.io/img/sabor-mm.jpg</image:loc></image:image>
+    <image:image><image:loc>https://symgalletas.github.io/img/regalo.jpg</image:loc></image:image>
+    <image:image><image:loc>https://symgalletas.github.io/img/logo-completo.png</image:loc></image:image>
+  </url>
+</urlset>

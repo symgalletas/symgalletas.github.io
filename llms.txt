@@ -1,0 +1,33 @@
+# S&M Galletas hechas con amor
+
+> Galletería en Medellín (Colombia) especializada en galletas tipo New York, vendidas en cajas con sabores de libre elección. Pedidos por WhatsApp con dos días de anticipación y entrega a domicilio en Medellín.
+
+- Sitio web: https://symgalletas.github.io/
+- WhatsApp para pedidos: +57 350 337 8808 (https://wa.me/573503378808)
+- Instagram: https://www.instagram.com/symgalletas/
+- TikTok: https://www.tiktok.com/@symgalletas0
+- Eslogan: "Hechas con amor, hechas para compartir."
+
+## Sabores
+
+- Oreo
+- Leche Klim
+- Chocolatina JET
+- Milo
+- M&M
+
+## Cajas y precios (pesos colombianos)
+
+- Caja de galletas x4: $22.500
+- Caja de galletas x6: $31.500
+- Caja de galletas x8: $40.500
+- Caja de mini galletas x10: $15.000
+- Caja de mini galletas x20: $25.000
+
+Los sabores son de libre elección en todas las cajas. El valor del domicilio se confirma por WhatsApp según la dirección.
+
+## Cómo pedir
+
+1. Elegir la caja y los sabores en https://symgalletas.github.io/
+2. Escribir nombre, dirección y fecha de entrega (mínimo dos días de anticipación).
+3. Enviar el pedido por WhatsApp; la tienda confirma el pago y la hora de entrega.
