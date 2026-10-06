@@ -372,6 +372,14 @@
   .summary { display: flex; justify-content: space-between; font-family: var(--display); font-weight: 800; font-size: 1.1rem; margin: 18px 0 4px; text-transform: uppercase; }
   .ship-note { font-size: .86rem; margin: 0 0 20px; color: var(--ink-soft); }
   .empty { text-align: center; padding: 32px 0; }
+  .empty-cart { padding: 12px 0 4px; }
+  .empty-cart h3 { margin: 0 0 6px; font-size: 1.05rem; text-transform: uppercase; }
+  .empty-cart p { margin: 0; }
+  .pick-boxes { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
+  .pick-boxes li { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; }
+  .pick-boxes strong { display: block; font-size: .88rem; }
+  .pick-boxes span { font-size: .88rem; font-variant-numeric: tabular-nums; }
+  .pick-boxes .pill-gold { padding: 9px 16px; font-size: .72rem; flex: none; }
   form .field { margin-bottom: 12px; }
   .drawer form label { display: block; font-weight: 500; font-size: .9rem; margin-bottom: 4px; }
   .drawer form input, .drawer form textarea { width: 100%; border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 12px; background: var(--paper); }
@@ -848,6 +856,7 @@
       if (line) line.qty = Math.min(99, line.qty + 1); else state.cart.push({ id: b.id, qty: 1 });
       save(); renderBadge();
       toast(`${b.name} añadida al carrito.`);
+      if ($("drawer").classList.contains("open")) { renderDrawer(); $("closeCart").focus(); }
       return;
     }
     const pick = e.target.closest("[data-pick]");
@@ -858,7 +867,9 @@
       save();
       pick.setAttribute("aria-pressed", String(on));
       pick.firstChild.textContent = on ? "✓ Sabor elegido" : "Quiero este sabor";
-      toast(on ? `${p.name} agregado a tus sabores.` : `${p.name} quitado de tus sabores.`);
+      toast(!on ? `${p.name} quitado de tus sabores.`
+        : state.cart.length ? `${p.name} agregado a tus sabores.`
+        : `${p.name} agregado a tus sabores. Ahora elige tu caja.`);
     }
   });
   function renderBadge() {
@@ -897,8 +908,16 @@
   }
   function renderDrawer() {
     if (!state.cart.length) {
-      $("drawerBody").innerHTML = `<div class="empty"><p>Tu carrito está vacío. Elige una caja de 4, 6 u 8 galletas para empezar.</p>
-        <a class="pill-gold" href="#galletas" data-close>Ver cajas</a></div>${state.flavors.length ? chosenHTML() : ""}`;
+      // Sin caja no hay pedido: se ofrece elegirla aquí mismo, junto con los sabores ya marcados.
+      const intro = state.flavors.length
+        ? `<h3>Ya elegiste tus sabores</h3><p>Ahora elige el tamaño de tu caja para completar el pedido.</p>`
+        : `<p>Tu carrito está vacío. Elige una caja para empezar; los sabores son de libre elección.</p>`;
+      $("drawerBody").innerHTML = `<div class="empty empty-cart">${intro}</div>
+        ${state.flavors.length ? chosenHTML() : ""}
+        <ul class="pick-boxes">${BOXES.map(b => `
+          <li><span><strong>${b.name}</strong>${cop(b.price)}</span>
+            <button class="pill-gold" type="button" data-add="${b.id}">Añadir<span class="sr-only">: ${b.name}</span></button></li>`).join("")}
+        </ul>`;
       return;
     }
     $("drawerBody").innerHTML = `
