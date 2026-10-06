@@ -373,6 +373,32 @@
   .pick-boxes strong { display: block; font-size: .88rem; }
   .pick-boxes span { font-size: .88rem; font-variant-numeric: tabular-nums; }
   .pick-boxes .pill-gold { padding: 9px 16px; font-size: .72rem; flex: none; }
+
+  /* Arma tu combo */
+  .combo-section { padding-top: 0; }
+  .combo { max-width: 860px; margin: 0 auto; background: var(--paper); border: 1px solid var(--line); border-radius: 22px; padding: clamp(18px, 4vw, 32px); display: grid; gap: 26px; }
+  .combo-step h3 { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; font-size: .95rem; text-transform: uppercase; letter-spacing: .05em; }
+  .combo-step h3 span { width: 28px; height: 28px; border-radius: 50%; background: var(--choco); color: var(--gold); display: grid; place-items: center; font-size: .85rem; }
+  .combo-sizes { display: flex; flex-wrap: wrap; gap: 8px; }
+  .combo-sizes button { border: 1.5px solid var(--line); background: var(--cream); border-radius: 14px; padding: 10px 14px; cursor: pointer; text-align: left; line-height: 1.25; }
+  .combo-sizes button strong { display: block; font-family: var(--display); font-size: .85rem; }
+  .combo-sizes button span { font-size: .82rem; color: var(--ink-soft); }
+  .combo-sizes button[aria-pressed="true"] { background: var(--choco); border-color: var(--choco); color: var(--cream-text); }
+  .combo-sizes button[aria-pressed="true"] span { color: var(--gold); }
+  .combo-flavors { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; }
+  .combo-flavors li { display: flex; align-items: center; gap: 12px; border: 1px solid var(--line); border-radius: 14px; padding: 8px 10px; background: #fff; }
+  .combo-flavors img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; background: #F8F2DC; flex: none; }
+  .combo-flavors .name { flex: 1; min-width: 0; font-weight: 600; font-size: .92rem; line-height: 1.25; }
+  .combo-flavors .qty { margin: 0; flex: none; }
+  .combo-flavors .qty button:disabled { opacity: .3; cursor: not-allowed; }
+  .combo-foot { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; border-top: 1px solid var(--line); padding-top: 20px; }
+  .combo-bar { height: 8px; border-radius: 999px; background: var(--cream); overflow: hidden; }
+  .combo-bar span { display: block; height: 100%; width: 0; background: var(--gold); border-radius: inherit; transition: width .25s ease; }
+  .combo-progress p { margin: 8px 0 0; font-size: .92rem; }
+  .combo-actions { display: flex; align-items: center; gap: 14px; }
+  .combo-actions .pill-gold:disabled { opacity: .45; cursor: not-allowed; }
+  .linkish { background: none; border: 0; padding: 0; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; color: var(--ink-soft); }
+  @media (max-width: 640px) { .combo-foot { grid-template-columns: 1fr; } .combo-actions { justify-content: space-between; } }
   form .field { margin-bottom: 12px; }
   .drawer form label { display: block; font-weight: 500; font-size: .9rem; margin-bottom: 4px; }
   .drawer form input, .drawer form textarea { width: 100%; border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 12px; background: var(--paper); }
@@ -480,7 +506,7 @@
         <h1 id="hero-title"><span class="kicker">Galletas estilo</span> <span>Nueva</span> <span class="gold">York</span></h1>
         <p class="subline">Grandes · Suaves · Irresistibles</p>
         <p class="hero-local">Hechas con amor en Medellín · pedidos por WhatsApp con 2 días de anticipación</p>
-        <a class="pill-gold" href="#galletas">Arma tu caja
+        <a class="pill-gold" href="#combo">Arma tu caja
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
         </a>
       </div>
@@ -493,7 +519,7 @@
     <div class="wrap">
       <p class="eyebrow">Presentaciones 🎁</p>
       <h2 class="section-title" id="cajas-title">Cajas de galletas y mini galletas</h2>
-      <p class="section-sub">Añade una caja surtida y cuéntanos los sabores en las notas, o elige en el menú una caja de tu sabor favorito.</p>
+      <p class="section-sub">Arma tu combo eligiendo galleta por galleta, o añade desde el menú una caja de tu sabor favorito.</p>
       <div class="grid boxes" id="boxes"></div>
       <noscript>
         <ul class="noscript-list">
@@ -529,6 +555,34 @@
       <h2 class="section-title" id="seleccion">Nuestro menú de galletas</h2>
       <p class="section-sub">Elige el tamaño de caja y añádela al carrito con el sabor que más te guste. Te confirmamos la disponibilidad por WhatsApp.</p>
       <div class="grid" id="grid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="section combo-section" id="combo" aria-labelledby="combo-title">
+    <div class="wrap">
+      <p class="eyebrow">Arma tu combo</p>
+      <h2 class="section-title" id="combo-title">Arma tu caja a tu gusto</h2>
+      <p class="section-sub">Elige el tamaño de la caja y escoge, galleta por galleta, cuántas quieres de cada sabor.</p>
+      <div class="combo">
+        <div class="combo-step">
+          <h3><span aria-hidden="true">1</span> Tamaño de la caja</h3>
+          <div class="combo-sizes" id="comboSizes" role="group" aria-label="Tamaño de la caja"></div>
+        </div>
+        <div class="combo-step">
+          <h3><span aria-hidden="true">2</span> Escoge tus galletas</h3>
+          <ul class="combo-flavors" id="comboFlavors"></ul>
+        </div>
+        <div class="combo-foot">
+          <div class="combo-progress">
+            <div class="combo-bar" aria-hidden="true"><span id="comboBar"></span></div>
+            <p id="comboStatus" aria-live="polite"></p>
+          </div>
+          <div class="combo-actions">
+            <button class="linkish" type="button" id="comboClear">Vaciar</button>
+            <button class="pill-gold" type="button" id="comboAdd" disabled>Añadir combo al carrito</button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -610,11 +664,11 @@
       <div class="faq">
         <details>
           <summary>¿Cómo hago mi pedido?</summary>
-          <p>En el menú elige el sabor y el tamaño de caja y toca “Añadir al carrito” (o añade una caja surtida). Luego abre el carrito, escribe tu nombre, dirección y fecha de entrega, y toca “Enviar pedido por WhatsApp”. Te respondemos para confirmar el pago y la hora.</p>
+          <p>Arma tu combo en “Arma tu caja a tu gusto” eligiendo cuántas galletas quieres de cada sabor, o añade desde el menú una caja de un solo sabor. Luego abre el carrito, escribe tu nombre, dirección y fecha de entrega, y toca “Enviar pedido por WhatsApp”. Te respondemos para confirmar el pago y la hora.</p>
         </details>
         <details>
           <summary>¿Puedo elegir los sabores de mi caja?</summary>
-          <p>Sí. En el menú puedes añadir una caja de un solo sabor, y si quieres mezclar sabores añade una caja surtida y escríbelos en las notas del pedido.</p>
+          <p>Sí. En “Arma tu caja a tu gusto” eliges el tamaño de la caja y cuántas galletas quieres de cada sabor. Si prefieres un solo sabor, añádelo desde el menú.</p>
         </details>
         <details>
           <summary>¿Cuánto cuestan las cajas de galletas?</summary>
@@ -750,21 +804,37 @@
   const media = (p, alt) => `<img src="${p.photo}" alt="${alt}" loading="lazy" decoding="async">`;
 
   // ---------- Estado ----------
-  // cart: líneas [{ id: caja, flavor: sabor o null (caja surtida), qty }].
+  // cart: líneas [{ id: caja, flavor: sabor único o null, mix: { sabor: unidades } o null, qty }].
+  // Con mix es un combo armado galleta por galleta; sin flavor ni mix es una caja surtida.
+  const boxUnits = b => Number(b.id.split("-")[1]);
+  const mixCount = mix => Object.values(mix).reduce((s, n) => s + n, 0);
+  const mixLabel = mix => FLAVORS.filter(f => mix[f.id]).map(f => `${f.name} ×${mix[f.id]}`).join(", ");
+  function validMix(boxId, mix) {
+    if (!mix || typeof mix !== "object") return null;
+    const clean = {};
+    for (const [id, n] of Object.entries(mix)) {
+      if (!flavorById[id] || !Number.isInteger(n) || n < 1) return null;
+      clean[id] = n;
+    }
+    return mixCount(clean) === boxUnits(boxById[boxId]) ? clean : null;
+  }
   const state = { cart: [], query: "" };
   try {
     const saved = JSON.parse(localStorage.getItem("sm-cookies-cart") || "{}");
     if (Array.isArray(saved.cart)) state.cart = saved.cart.flatMap(l => {
       const q = Number(l && l.qty);
-      const flavor = l && flavorById[l.flavor] ? l.flavor : null;
-      return l && boxById[l.id] && Number.isInteger(q) && q > 0 && q < 100 ? [{ id: l.id, flavor, qty: q }] : [];
+      if (!l || !boxById[l.id] || !Number.isInteger(q) || q < 1 || q > 99) return [];
+      const mix = validMix(l.id, l.mix);
+      const flavor = !mix && flavorById[l.flavor] ? l.flavor : null;
+      return [{ id: l.id, flavor, mix, qty: q }];
     });
   } catch (_) {}
   const save = () => { try { localStorage.setItem("sm-cookies-cart", JSON.stringify({ cart: state.cart })); } catch (_) {} };
   const lineTotal = l => boxById[l.id].price * l.qty;
   const cartTotal = () => state.cart.reduce((s, l) => s + lineTotal(l), 0);
   const cartUnits = () => state.cart.reduce((s, l) => s + l.qty, 0);
-  const flavorLabel = l => l.flavor ? flavorById[l.flavor].name : "Surtida";
+  const flavorLabel = l => l.mix ? mixLabel(l.mix) : l.flavor ? flavorById[l.flavor].name : "Surtida";
+  const lineKey = l => `${l.id}|${l.flavor || ""}|${l.mix ? mixLabel(l.mix) : ""}`;
 
   const $ = id => document.getElementById(id);
   const canPrefill = Boolean(WHATSAPP || !WHATSAPP_LINK);
@@ -794,12 +864,12 @@
         <h3>${b.name}</h3>
         <p class="desc">${b.desc}</p>
         <div class="price">${cop(b.price)}</div>
-        <div class="controls"><button class="pill-gold" type="button" data-add="${b.id}">Añadir surtida<span class="sr-only">: ${b.name}</span></button></div>
+        <div class="controls"><button class="pill-gold" type="button" data-combo-size="${b.id}">Armar mi combo<span class="sr-only">: ${b.name}</span></button></div>
       </div>
     </article>`).join("");
 
   // "Caja x6" / "Mini x10": etiqueta corta para el selector de tamaño.
-  const boxShort = b => (b.id.startsWith("mini") ? "Mini x" : "Caja x") + b.id.split("-")[1];
+  const boxShort = b => (b.id.startsWith("mini") ? "Mini x" : "Caja x") + boxUnits(b);
 
   // Cada sabor se compra en la caja que el cliente elija.
   function flavorCard(p) {
@@ -849,14 +919,72 @@
   $("search").addEventListener("keydown", e => { if (e.key === "Enter") $("catalogo").scrollIntoView(); });
 
   // ---------- Carrito ----------
-  function addToCart(boxId, flavor) {
+  function addToCart(boxId, flavor, mix = null) {
     const b = boxById[boxId];
-    const line = state.cart.find(l => l.id === boxId && l.flavor === flavor);
-    if (line) line.qty = Math.min(99, line.qty + 1); else state.cart.push({ id: boxId, flavor, qty: 1 });
+    const added = { id: boxId, flavor: mix ? null : flavor, mix, qty: 1 };
+    const line = state.cart.find(l => lineKey(l) === lineKey(added));
+    if (line) line.qty = Math.min(99, line.qty + 1); else state.cart.push(added);
     save(); renderBadge();
-    toast(flavor ? `${b.name} de ${flavorById[flavor].name} añadida al carrito.` : `${b.name} surtida añadida al carrito.`);
+    toast(mix ? `${b.name} (${mixLabel(mix)}) añadida al carrito.`
+      : flavor ? `${b.name} de ${flavorById[flavor].name} añadida al carrito.`
+      : `${b.name} surtida añadida al carrito.`);
     if ($("drawer").classList.contains("open")) { renderDrawer(); $("closeCart").focus(); }
   }
+
+  // ---------- Arma tu combo ----------
+  const combo = { size: "caja-6", mix: {} };
+  $("comboSizes").innerHTML = BOXES.map(b =>
+    `<button type="button" data-size="${b.id}" aria-pressed="false"><strong>${boxShort(b)}</strong><span>${cop(b.price)}</span></button>`).join("");
+  $("comboFlavors").innerHTML = FLAVORS.map(f => `
+    <li>
+      <img src="${f.photo}" alt="" width="52" height="52" loading="lazy" decoding="async">
+      <span class="name">${f.name}</span>
+      <div class="qty" role="group" aria-label="Galletas de ${f.name}">
+        <button type="button" data-combo-dec="${f.id}" aria-label="Quitar una de ${f.name}">−</button>
+        <span id="combo-n-${f.id}">0</span>
+        <button type="button" data-combo-inc="${f.id}" aria-label="Agregar una de ${f.name}">+</button>
+      </div>
+    </li>`).join("");
+  function renderCombo() {
+    const b = boxById[combo.size], cap = boxUnits(b), n = mixCount(combo.mix);
+    document.querySelectorAll("[data-size]").forEach(btn => btn.setAttribute("aria-pressed", String(btn.dataset.size === combo.size)));
+    FLAVORS.forEach(f => {
+      $(`combo-n-${f.id}`).textContent = combo.mix[f.id] || 0;
+      document.querySelector(`[data-combo-dec="${f.id}"]`).disabled = !combo.mix[f.id];
+      document.querySelector(`[data-combo-inc="${f.id}"]`).disabled = n >= cap;
+    });
+    $("comboBar").style.width = `${Math.min(100, n / cap * 100)}%`;
+    $("comboStatus").textContent = n === cap ? `¡Caja completa! ${b.name} · ${cop(b.price)}`
+      : n > cap ? `Te sobran ${n - cap} ${n - cap === 1 ? "galleta" : "galletas"} para esta caja; quita algunas o elige una caja más grande.`
+      : `${n} de ${cap} galletas · faltan ${cap - n}.`;
+    $("comboAdd").disabled = n !== cap;
+  }
+  function chooseSize(size) { combo.size = size; renderCombo(); }
+  $("comboSizes").addEventListener("click", e => { const btn = e.target.closest("[data-size]"); if (btn) chooseSize(btn.dataset.size); });
+  $("comboFlavors").addEventListener("click", e => {
+    const inc = e.target.closest("[data-combo-inc]"), dec = e.target.closest("[data-combo-dec]");
+    if (!inc && !dec) return;
+    const id = inc ? inc.dataset.comboInc : dec.dataset.comboDec;
+    const next = (combo.mix[id] || 0) + (inc ? 1 : -1);
+    if (next > 0) combo.mix[id] = next; else delete combo.mix[id];
+    renderCombo();
+  });
+  $("comboClear").addEventListener("click", () => { combo.mix = {}; renderCombo(); });
+  $("comboAdd").addEventListener("click", () => {
+    const mix = {};
+    FLAVORS.forEach(f => { if (combo.mix[f.id]) mix[f.id] = combo.mix[f.id]; });
+    addToCart(combo.size, null, mix);
+    combo.mix = {}; renderCombo();
+  });
+  // "Armar mi combo" en las cajas y en el carrito vacío: preselecciona el tamaño y lleva al armador.
+  document.addEventListener("click", e => {
+    const btn = e.target.closest("[data-combo-size]");
+    if (!btn) return;
+    chooseSize(btn.dataset.comboSize);
+    if ($("drawer").classList.contains("open")) closeCart();
+    $("combo").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  renderCombo();
   document.addEventListener("click", e => {
     const add = e.target.closest("[data-add]");
     if (add) { addToCart(add.dataset.add, null); return; }
@@ -878,13 +1006,13 @@
   function linesHTML() {
     return state.cart.map((l, i) => {
       const b = boxById[l.id];
-      const thumb = l.flavor ? flavorById[l.flavor] : b;
+      const thumb = l.flavor ? flavorById[l.flavor] : b;  // los combos y surtidas muestran la foto de la caja
       return `
         <div class="line-item">
           <div class="thumb">${media(thumb, "")}</div>
           <div>
             <h3>${b.name}</h3>
-            <div class="variant">${l.flavor ? `Sabor: ${flavorById[l.flavor].name}` : "Surtida: cuéntanos los sabores en las notas"} · ${cop(b.price)}</div>
+            <div class="variant">${l.mix ? `Combo: ${mixLabel(l.mix)}` : l.flavor ? `Sabor: ${flavorById[l.flavor].name}` : "Surtida: cuéntanos los sabores en las notas"} · ${cop(b.price)}</div>
             <div class="qty" role="group" aria-label="Cantidad de ${b.name} ${flavorLabel(l)}">
               <button type="button" data-dec="${i}" aria-label="Quitar una">−</button>
               <span>${l.qty}</span>
@@ -898,10 +1026,10 @@
   }
   function renderDrawer() {
     if (!state.cart.length) {
-      $("drawerBody").innerHTML = `<div class="empty empty-cart"><p>Tu carrito está vacío. Añade galletas desde el menú eligiendo sabor y caja, o una caja surtida aquí:</p></div>
+      $("drawerBody").innerHTML = `<div class="empty empty-cart"><p>Tu carrito está vacío. Añade una caja de un solo sabor desde el menú, o arma tu combo eligiendo el tamaño:</p></div>
         <ul class="pick-boxes">${BOXES.map(b => `
           <li><span><strong>${b.name}</strong>${cop(b.price)}</span>
-            <button class="pill-gold" type="button" data-add="${b.id}">Añadir<span class="sr-only">: ${b.name} surtida</span></button></li>`).join("")}
+            <button class="pill-gold" type="button" data-combo-size="${b.id}">Armar<span class="sr-only"> combo: ${b.name}</span></button></li>`).join("")}
         </ul>`;
       return;
     }
@@ -911,7 +1039,7 @@
         <div class="field"><label for="f-name">Nombre</label><input id="f-name" name="name" autocomplete="name"><div class="error" id="e-name"></div></div>
         <div class="field"><label for="f-address">Dirección de entrega</label><input id="f-address" name="address" autocomplete="street-address"><div class="error" id="e-address"></div></div>
         <div class="field"><label for="f-date">Fecha de entrega</label><input id="f-date" name="date" type="date" min="${minDate()}"><div class="error" id="e-date"></div></div>
-        <div class="field"><label for="f-notes">Notas (opcional)</label><textarea id="f-notes" name="notes" rows="2" placeholder="Sabores de tus cajas surtidas, mensaje para el regalo…"></textarea></div>
+        <div class="field"><label for="f-notes">Notas (opcional)</label><textarea id="f-notes" name="notes" rows="2" placeholder="Mensaje para el regalo, indicaciones de entrega…"></textarea></div>
         <button class="pill-gold btn-wa" type="submit">Enviar pedido por WhatsApp</button>
       </form>`;
   }

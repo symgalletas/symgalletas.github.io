@@ -24,10 +24,10 @@
 - Caja de mini galletas x10: $15.000
 - Caja de mini galletas x20: $25.000
 
-Los sabores son de libre elección en todas las cajas. El valor del domicilio se confirma por WhatsApp según la dirección.
+Los sabores son de libre elección en todas las cajas: el cliente puede armar su combo galleta por galleta. El valor del domicilio se confirma por WhatsApp según la dirección.
 
 ## Cómo pedir
 
-1. En https://symgalletas.github.io/ elegir sabor y tamaño de caja (o una caja surtida) y añadirla al carrito.
+1. En https://symgalletas.github.io/ armar el combo (tamaño de caja y cuántas galletas de cada sabor) o añadir una caja de un solo sabor desde el menú.
 2. Escribir nombre, dirección y fecha de entrega (mínimo dos días de anticipación).
 3. Enviar el pedido por WhatsApp; la tienda confirma el pago y la hora de entrega.
