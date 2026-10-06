@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>s&amp;m cookies | Galletas tipo New York en Medellín</title>
-<meta name="description" content="s&amp;m cookies: galletas tipo New York hechas con amor en Medellín. Cajas de 4, 6 y 8 galletas con sabores de libre elección. Pedidos con dos días de anticipación.">
-<meta property="og:title" content="s&amp;m cookies | Galletas tipo New York en Medellín">
+<title>S&amp;M Galletas hechas con amor | Galletas tipo New York en Medellín</title>
+<meta name="description" content="S&amp;M, galletas tipo New York hechas con amor en Medellín. Cajas de 4, 6 y 8 galletas con sabores de libre elección. Pedidos con dos días de anticipación.">
+<meta property="og:title" content="S&amp;M Galletas hechas con amor | Medellín">
 <meta property="og:description" content="Galletas tipo New York hechas con amor, hechas para compartir. Pedidos con dos días de anticipación.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="img/regalo.jpg">
@@ -14,12 +14,12 @@
 <link rel="apple-touch-icon" href="img/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@500;600;700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Montserrat:wght@500;600;700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Bakery",
-  "name": "s&m cookies",
+  "name": "S&M Galletas hechas con amor",
   "alternateName": "symgalletas",
   "slogan": "Hechas con amor, hechas para compartir.",
   "description": "Galletas tipo New York en cajas de 4, 6 y 8 unidades con sabores de libre elección.",
@@ -53,7 +53,7 @@
     --wa: #25D366;
     --display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
     --body: "Poppins", "Helvetica Neue", Arial, sans-serif;
-    --script: "Dancing Script", "Brush Script MT", cursive;
+    --serif: "Playfair Display", "Didot", "Bodoni 72", Georgia, serif;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -82,9 +82,9 @@
   /* ---------- Logo ---------- */
   .logo { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--cream-text); }
   .logo svg { width: 58px; height: 58px; flex: none; }
-  .logo-text { display: flex; flex-direction: column; line-height: .95; }
-  .logo-text strong { font-family: var(--script); font-weight: 700; font-size: 2.5rem; color: var(--cream-text); }
-  .logo-text small { font-family: var(--display); font-weight: 600; font-size: .7rem; letter-spacing: .2em; color: var(--gold); margin-top: 2px; }
+  .logo-text { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+  .logo-text strong { font-family: var(--serif); font-weight: 500; font-size: 2.3rem; letter-spacing: .04em; color: var(--cream-text); }
+  .logo-text small { font-family: var(--display); font-weight: 600; font-size: .62rem; letter-spacing: .22em; color: var(--gold); margin-top: 4px; padding-top: 4px; border-top: 1px solid rgba(227,174,95,.45); }
 
   /* ---------- Header ---------- */
   .topbar { background: var(--choco); position: sticky; top: 0; z-index: 30; border-bottom: 1px solid rgba(227,174,95,.15); }
@@ -104,7 +104,7 @@
   .search-row input::placeholder { color: #B9A48F; }
   .search-row input:focus { outline: none; border-color: var(--gold); }
   @media (max-width: 960px) { .mainnav { display: none; } .cart-total { display: none; } }
-  @media (max-width: 420px) { .logo svg { width: 46px; height: 46px; } .logo-text strong { font-size: 2rem; } }
+  @media (max-width: 420px) { .logo svg { width: 46px; height: 46px; } .logo-text strong { font-size: 1.9rem; } .logo-text small { font-size: .54rem; letter-spacing: .16em; } }
 
   /* ---------- Hero ---------- */
   .hero { position: relative; background: var(--choco); overflow: hidden; color: var(--cream-text); }
@@ -298,9 +298,9 @@
 
 <header class="topbar">
   <div class="wrap">
-    <a class="logo" href="#inicio" aria-label="s&amp;m cookies, inicio">
+    <a class="logo" href="#inicio" aria-label="S&amp;M Galletas hechas con amor, inicio">
       <img class="logo-img" src="img/logo.jpg" alt="" width="58" height="58">
-      <span class="logo-text"><strong>s&amp;m cookies</strong><small>GALLETAS TIPO NEW YORK</small></span>
+      <span class="logo-text"><strong>S&amp;M</strong><small>GALLETAS HECHAS CON AMOR</small></span>
     </a>
     <nav class="mainnav" aria-label="Principal">
       <a href="#inicio" aria-current="page">Inicio</a>
@@ -362,8 +362,8 @@
         <a class="pill-gold" href="#galletas">Elegir mi caja</a>
       </div>
       <div class="posters">
-        <img src="img/regalo.jpg" alt="Afiche de s&amp;m cookies: El regalo perfecto para celebrar lo bonito de tenernos, con una caja roja de galletas" loading="lazy">
-        <img src="img/momentos.jpg" alt="Afiche de s&amp;m cookies: Porque en S&amp;M los mejores momentos saben a galleta" loading="lazy">
+        <img src="img/regalo.jpg" alt="Afiche de S&amp;M: El regalo perfecto para celebrar lo bonito de tenernos, con una caja roja de galletas" loading="lazy">
+        <img src="img/momentos.jpg" alt="Afiche de S&amp;M: Porque en S&amp;M los mejores momentos saben a galleta" loading="lazy">
       </div>
     </div>
   </section>
@@ -402,7 +402,7 @@
       <h2 class="section-title" id="ig-title">Síguenos en Instagram</h2>
       <p class="section-sub">En <strong>@symgalletas</strong> compartimos el proceso de creación de nuestras galletas, nuestras presentaciones y lo que dicen nuestros clientes.</p>
       <div class="ig-grid">
-        <a href="https://www.instagram.com/symgalletas/" target="_blank" rel="noopener"><img src="img/galletas-empacadas.jpg" alt="Galletas s&amp;m cookies empacadas con su sticker" loading="lazy"></a>
+        <a href="https://www.instagram.com/symgalletas/" target="_blank" rel="noopener"><img src="img/galletas-empacadas.jpg" alt="Galletas S&amp;M empacadas con su sticker" loading="lazy"></a>
         <a href="https://www.instagram.com/symgalletas/" target="_blank" rel="noopener"><img src="img/cajas-precios.jpg" alt="Afiche de cajas de galletas x4, x6 y x8 con precios" loading="lazy"></a>
         <a href="https://www.instagram.com/symgalletas/" target="_blank" rel="noopener"><img src="img/caja-x6.jpg" alt="Caja de galletas con moño rojo" loading="lazy"></a>
       </div>
@@ -475,7 +475,7 @@
       <div>
         <a class="logo" href="#inicio">
           <img class="logo-img" src="img/logo.jpg" alt="" width="58" height="58">
-          <span class="logo-text"><strong>s&amp;m cookies</strong><small>GALLETAS TIPO NEW YORK</small></span>
+          <span class="logo-text"><strong>S&amp;M</strong><small>GALLETAS HECHAS CON AMOR</small></span>
         </a>
         <p class="tagline">Hechas con amor, hechas para compartir. 🍪🤎</p>
       </div>
@@ -508,7 +508,7 @@
         </ul>
       </div>
     </div>
-    <p class="legal">© <span id="year"></span> s&amp;m cookies · Medellín. Precios en pesos colombianos.</p>
+    <p class="legal">© <span id="year"></span> S&amp;M Galletas hechas con amor · Medellín. Precios en pesos colombianos.</p>
   </div>
 </footer>
 
@@ -535,7 +535,7 @@
   // precargado, así que el pedido se copia para que el cliente lo pegue.
   const WHATSAPP = "";
   const WHATSAPP_LINK = "https://wa.me/message/ML43LEBW3JSVJ1";
-  const BRAND = "s&m cookies";
+  const BRAND = "S&M Galletas";
   const SOCIAL = {
     instagram: "https://www.instagram.com/symgalletas/",
   };
