@@ -112,7 +112,7 @@
 
   /* ---------- Hero ---------- */
   .hero { position: relative; background: var(--choco); overflow: hidden; color: var(--cream-text); }
-  .hero-photo { position: absolute; inset: 0 0 0 38%; background: url("img/hero.jpg") center / cover no-repeat; }
+  .hero-photo { position: absolute; inset: 0 0 0 38%; background: url("img/caja-x6.jpg") center 62% / cover no-repeat; }
   .hero-photo::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--choco) 0%, rgba(31,19,12,.65) 18%, rgba(31,19,12,0) 45%); }
   .hero .wrap { position: relative; min-height: clamp(420px, 34vw, 520px); display: flex; align-items: center; }
   .hero-copy { padding: 48px 0; max-width: 560px; }
@@ -130,9 +130,9 @@
   }
 
   /* ---------- Flavor strip ---------- */
-  .strip { background: var(--cream); display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; padding: 8px 0 0; }
+  .strip { background: #F8F2DC; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; padding: 8px 0 0; }
   .strip a { display: block; text-decoration: none; text-align: center; padding-bottom: 14px; }
-  .strip .ph { aspect-ratio: 16 / 9; background: #F8F0E2 center / contain no-repeat; }
+  .strip .ph { aspect-ratio: 16 / 9; background: #F8F2DC center / contain no-repeat; }
   .strip .label { display: inline-block; margin-top: -14px; position: relative; background: #EED9B8; color: var(--choco); font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: .82rem; padding: 6px 26px; border-radius: 999px; }
   .strip a:hover .label { background: var(--gold); }
   @media (max-width: 760px) {
@@ -227,6 +227,8 @@
   /* Cajas */
   .boxes { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
   #grid { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+  #grid .card-media { background: #F8F2DC; }
+  #grid .card-media img { object-fit: contain; }
   @media (max-width: 760px) { #grid { grid-template-columns: repeat(2, 1fr); } }
   .boxes .card-media { aspect-ratio: 4 / 5; }
   .boxes .price { font-size: 1.35rem; font-weight: 700; font-family: var(--display); }
@@ -333,7 +335,7 @@
 
 <main id="inicio">
   <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-photo" role="img" aria-label="Dos galletas New York partidas con chocolate derretido"></div>
+    <div class="hero-photo" role="img" aria-label="Caja S&amp;M con galletas tipo New York y moño rojo"></div>
     <div class="wrap">
       <div class="hero-copy">
         <p class="kicker">Galletas estilo</p>
