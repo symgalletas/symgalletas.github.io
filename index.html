@@ -10,8 +10,8 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="img/regalo.jpg">
 <meta property="og:locale" content="es_CO">
-<link rel="icon" type="image/jpeg" href="img/logo.jpg">
-<link rel="apple-touch-icon" href="img/logo.jpg">
+<link rel="icon" type="image/png" href="img/logo.png">
+<link rel="apple-touch-icon" href="img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Montserrat:wght@500;600;700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
   "description": "Galletas tipo New York en cajas de 4, 6 y 8 unidades y mini galletas en cajas de 10 y 20, con sabores de libre elección.",
   "telephone": "+57 350 337 8808",
   "servesCuisine": "Galletas tipo New York",
-  "logo": "img/logo.jpg",
+  "logo": "img/logo-completo.png",
   "image": "img/regalo.jpg",
   "makesOffer": [
     { "@type": "Offer", "price": "22500", "priceCurrency": "COP", "itemOffered": { "@type": "Product", "name": "Caja de galletas x4" } },
@@ -209,6 +209,8 @@
   .footer a { text-decoration: none; }
   .footer a:hover { color: var(--gold); }
   .footer .tagline { margin: 16px 0 0; }
+  .logo-full { display: inline-block; }
+  .logo-full img { width: 220px; height: auto; border-radius: 16px; box-shadow: 0 0 0 2px var(--gold); }
   .social { display: flex; gap: 12px; margin-bottom: 22px; }
   .social a { width: 40px; height: 40px; border-radius: 50%; background: var(--gold); color: var(--choco); display: grid; place-items: center; }
   .social a:hover { background: #EDBF77; color: var(--choco); }
@@ -305,7 +307,7 @@
 <header class="topbar">
   <div class="wrap">
     <a class="logo" href="#inicio" aria-label="S&amp;M Galletas hechas con amor, inicio">
-      <img class="logo-img" src="img/logo.jpg" alt="" width="58" height="58">
+      <img class="logo-img" src="img/logo.png" alt="" width="58" height="58">
       <span class="logo-text"><strong>S&amp;M</strong><small>GALLETAS HECHAS CON AMOR</small></span>
     </a>
     <nav class="mainnav" aria-label="Principal">
@@ -484,9 +486,8 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a class="logo" href="#inicio">
-          <img class="logo-img" src="img/logo.jpg" alt="" width="58" height="58">
-          <span class="logo-text"><strong>S&amp;M</strong><small>GALLETAS HECHAS CON AMOR</small></span>
+        <a class="logo-full" href="#inicio" aria-label="S&amp;M Galletas hechas con amor, inicio">
+          <img src="img/logo-completo.png" alt="Logo de S&amp;M Galletas hechas con amor" width="360" height="262">
         </a>
         <p class="tagline">Hechas con amor, hechas para compartir. 🍪🤎</p>
       </div>
