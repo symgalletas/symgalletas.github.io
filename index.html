@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>S&amp;M Galletas hechas con amor | Galletas tipo New York en Medellín</title>
-<meta name="description" content="S&amp;M, galletas tipo New York hechas con amor en Medellín. Cajas de 4, 6 y 8 galletas con sabores de libre elección. Pedidos con dos días de anticipación.">
+<meta name="description" content="S&amp;M, galletas tipo New York hechas con amor en Medellín. Sabores Oreo, Leche Klim, Chocolatina JET, Milo y M&amp;M en cajas de 4, 6 y 8 galletas o de 10 y 20 mini galletas. Pedidos con dos días de anticipación.">
 <meta property="og:title" content="S&amp;M Galletas hechas con amor | Medellín">
 <meta property="og:description" content="Galletas tipo New York hechas con amor, hechas para compartir. Pedidos con dos días de anticipación.">
 <meta property="og:type" content="website">
@@ -22,14 +22,17 @@
   "name": "S&M Galletas hechas con amor",
   "alternateName": "symgalletas",
   "slogan": "Hechas con amor, hechas para compartir.",
-  "description": "Galletas tipo New York en cajas de 4, 6 y 8 unidades con sabores de libre elección.",
+  "description": "Galletas tipo New York en cajas de 4, 6 y 8 unidades y mini galletas en cajas de 10 y 20, con sabores de libre elección.",
+  "telephone": "+57 350 337 8808",
   "servesCuisine": "Galletas tipo New York",
   "logo": "img/logo.jpg",
   "image": "img/regalo.jpg",
   "makesOffer": [
     { "@type": "Offer", "price": "22500", "priceCurrency": "COP", "itemOffered": { "@type": "Product", "name": "Caja de galletas x4" } },
     { "@type": "Offer", "price": "31500", "priceCurrency": "COP", "itemOffered": { "@type": "Product", "name": "Caja de galletas x6" } },
-    { "@type": "Offer", "price": "40500", "priceCurrency": "COP", "itemOffered": { "@type": "Product", "name": "Caja de galletas x8" } }
+    { "@type": "Offer", "price": "40500", "priceCurrency": "COP", "itemOffered": { "@type": "Product", "name": "Caja de galletas x8" } },
+    { "@type": "Offer", "price": "15000", "priceCurrency": "COP", "itemOffered": { "@type": "Product", "name": "Caja de mini galletas x10" } },
+    { "@type": "Offer", "price": "25000", "priceCurrency": "COP", "itemOffered": { "@type": "Product", "name": "Caja de mini galletas x20" } }
   ],
   "priceRange": "$$",
   "currenciesAccepted": "COP",
@@ -129,7 +132,7 @@
   /* ---------- Flavor strip ---------- */
   .strip { background: var(--cream); display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; padding: 8px 0 0; }
   .strip a { display: block; text-decoration: none; text-align: center; padding-bottom: 14px; }
-  .strip .ph { aspect-ratio: 16 / 9; background: var(--paper) center / cover no-repeat; }
+  .strip .ph { aspect-ratio: 16 / 9; background: #F8F0E2 center / contain no-repeat; }
   .strip .label { display: inline-block; margin-top: -14px; position: relative; background: #EED9B8; color: var(--choco); font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: .82rem; padding: 6px 26px; border-radius: 999px; }
   .strip a:hover .label { background: var(--gold); }
   @media (max-width: 760px) {
@@ -163,9 +166,6 @@
   .dark .card { border-color: transparent; color: var(--ink); }
 
   /* Catalog */
-  .filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; }
-  .filters button { border: 1.5px solid var(--line); background: var(--paper); border-radius: 999px; padding: 9px 20px; cursor: pointer; font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; font-size: .76rem; }
-  .filters button[aria-pressed="true"] { background: var(--choco); color: var(--gold); border-color: var(--choco); }
   .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
   @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 760px) { .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } .grid .desc { display: none; } .grid .card-body { padding: 12px; } }
@@ -225,7 +225,9 @@
   @media (max-width: 420px) { .logo .logo-img { width: 46px; height: 46px; } }
 
   /* Cajas */
-  .boxes { grid-template-columns: repeat(3, 1fr); }
+  .boxes { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+  #grid { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+  @media (max-width: 760px) { #grid { grid-template-columns: repeat(2, 1fr); } }
   .boxes .card-media { aspect-ratio: 4 / 5; }
   .boxes .price { font-size: 1.35rem; font-weight: 700; font-family: var(--display); }
   @media (max-width: 760px) { .boxes { grid-template-columns: 1fr; } .boxes .desc { display: block; } .boxes .card-body { padding: 16px; } }
@@ -325,7 +327,7 @@
   </div>
   <div class="wrap search-row" id="searchRow">
     <label class="sr-only" for="search">Buscar galletas</label>
-    <input id="search" type="search" placeholder="Busca un sabor: pistacho, lotus, red velvet…">
+    <input id="search" type="search" placeholder="Busca un sabor: Oreo, Milo, M&amp;M…">
   </div>
 </header>
 
@@ -349,7 +351,7 @@
   <section class="section" id="galletas" aria-labelledby="cajas-title">
     <div class="wrap">
       <p class="eyebrow">Presentaciones 🎁</p>
-      <h2 class="section-title" id="cajas-title">Cajas de galletas</h2>
+      <h2 class="section-title" id="cajas-title">Cajas de galletas y mini galletas</h2>
       <p class="section-sub">Los sabores son de libre elección. Elige tu caja y márcanos tus sabores favoritos en el menú.</p>
       <div class="grid boxes" id="boxes"></div>
     </div>
@@ -375,7 +377,6 @@
       <p class="eyebrow">Menú 🍪</p>
       <h2 class="section-title" id="seleccion">Nuestro menú</h2>
       <p class="section-sub">Marca los sabores que quieres en tu caja con “Quiero este sabor”. Te confirmamos la disponibilidad por WhatsApp.</p>
-      <div class="filters" id="filters" role="group" aria-label="Filtrar por categoría"></div>
       <div class="grid" id="grid" aria-live="polite"></div>
     </div>
   </section>
@@ -404,9 +405,9 @@
       <h2 class="section-title" id="ig-title">Síguenos en redes</h2>
       <p class="section-sub">En Instagram y TikTok compartimos el proceso de creación de nuestras galletas, nuestras presentaciones y lo que dicen nuestros clientes.</p>
       <div class="ig-grid">
+        <a href="https://www.instagram.com/symgalletas/" target="_blank" rel="noopener"><img src="img/cajas-regalo.jpg" alt="Dos cajas de regalo S&amp;M con ventana y moño rojo" loading="lazy"></a>
+        <a href="https://www.instagram.com/symgalletas/" target="_blank" rel="noopener"><img src="img/caja-asa.jpg" alt="Caja S&amp;M con asa y ventana con galletas empacadas" loading="lazy"></a>
         <a href="https://www.instagram.com/symgalletas/" target="_blank" rel="noopener"><img src="img/galletas-empacadas.jpg" alt="Galletas S&amp;M empacadas con su sticker" loading="lazy"></a>
-        <a href="https://www.instagram.com/symgalletas/" target="_blank" rel="noopener"><img src="img/cajas-precios.jpg" alt="Afiche de cajas de galletas x4, x6 y x8 con precios" loading="lazy"></a>
-        <a href="https://www.instagram.com/symgalletas/" target="_blank" rel="noopener"><img src="img/caja-x6.jpg" alt="Caja de galletas con moño rojo" loading="lazy"></a>
       </div>
       <ul class="highlights">
         <li><a href="https://www.instagram.com/symgalletas/" target="_blank" rel="noopener"><span class="ring">✨</span>Clientes</a></li>
@@ -513,7 +514,7 @@
         <ul>
           <li><a href="https://www.instagram.com/symgalletas/" target="_blank" rel="noopener">Instagram @symgalletas</a></li>
           <li><a href="https://www.tiktok.com/@symgalletas0" target="_blank" rel="noopener">TikTok @symgalletas0</a></li>
-          <li><a href="#" data-wa>WhatsApp: pedidos y cotizaciones</a></li>
+          <li><a href="#" data-wa>WhatsApp 350 337 8808</a></li>
         </ul>
       </div>
     </div>
@@ -539,10 +540,11 @@
 <script>
 (() => {
   // ---------- Configuración ----------
-  // WHATSAPP: número internacional sin "+" (ej. "573001234567"); permite precargar el pedido en el chat.
-  // WHATSAPP_LINK: enlace corto de WhatsApp Business (Linktree de @symgalletas). No admite texto
-  // precargado, así que el pedido se copia para que el cliente lo pegue.
-  const WHATSAPP = "";
+  // WHATSAPP: número internacional sin "+"; permite precargar el pedido en el chat.
+  // Es el número publicado por la marca en su afiche (img/momentos.jpg).
+  // WHATSAPP_LINK: enlace corto de WhatsApp Business (Linktree); solo se usa si WHATSAPP queda vacío,
+  // y como no admite texto precargado, el pedido se copia para que el cliente lo pegue.
+  const WHATSAPP = "573503378808";
   const WHATSAPP_LINK = "https://wa.me/message/ML43LEBW3JSVJ1";
   const BRAND = "S&M Galletas";
   const SOCIAL = {
@@ -551,104 +553,43 @@
   };
   const LEAD_DAYS = 2; // pedidos con dos días de anticipación
 
-  const CATEGORIES = [
-    { id: "clasicas", name: "Clásicas" },
-    { id: "rellenas", name: "Rellenas" },
-    { id: "especiales", name: "Especiales" },
-  ];
-
-  // Cajas: precios publicados en Instagram (@symgalletas), sabores de libre elección.
+  // Cajas: precios publicados por la marca (img/cajas-precios.jpg y img/cajas-mini-precios.jpg).
   const BOXES = [
-    { id: "caja-4", name: "Caja de galletas x4", units: 4, price: 22500, photo: "img/caja-x4.jpg",
+    { id: "caja-4", name: "Caja de galletas x4", price: 22500, photo: "img/caja-x4.jpg",
       desc: "Cuatro galletas tipo New York en caja con moño. Los sabores son de libre elección." },
-    { id: "caja-6", name: "Caja de galletas x6", units: 6, price: 31500, photo: "img/caja-x6.jpg", tag: "Para regalar",
+    { id: "caja-6", name: "Caja de galletas x6", price: 31500, photo: "img/caja-x6.jpg", tag: "Para regalar",
       desc: "Seis galletas tipo New York en caja con moño. Los sabores son de libre elección." },
-    { id: "caja-8", name: "Caja de galletas x8", units: 8, price: 40500, photo: "img/galletas-empacadas.jpg",
+    { id: "caja-8", name: "Caja de galletas x8", price: 40500, photo: "img/caja-x8.jpg",
       desc: "Ocho galletas tipo New York para compartir. Los sabores son de libre elección." },
+    { id: "mini-10", name: "Caja de mini galletas x10", price: 15000, photo: "img/mini-x10.jpg", tag: "Mini",
+      desc: "Diez mini galletas en caja con moño. Los sabores son de libre elección." },
+    { id: "mini-20", name: "Caja de mini galletas x20", price: 25000, photo: "img/mini-x20.jpg", tag: "Mini",
+      desc: "Veinte mini galletas en caja con moño. Los sabores son de libre elección." },
   ];
 
-  // Sabores del menú. photo: foto real; sin foto se dibuja una ilustración con dough/edge/chunks.
+  // Sabores: menú publicado por la marca (img/nuestros-sabores.jpg).
   const FLAVORS = [
-    { id: "clasica", cat: "clasicas", name: "Clásica", photo: "img/clasica.jpg",
-      desc: "Mantequilla tostada y trozos grandes de chocolate semiamargo." },
-    { id: "cookies-cream", cat: "clasicas", name: "Cookies & cream", photo: "img/cookies-cream.jpg",
-      desc: "Masa de vainilla con trozos de galleta de chocolate y chocolate blanco." },
-    { id: "lotus", cat: "especiales", name: "Lotus", photo: "img/lotus.jpg",
-      desc: "Galleta especiada con trozos de galleta lotus y hilos de caramelo." },
-    { id: "red-velvet", cat: "rellenas", name: "Red velvet", photo: "img/red-velvet.jpg",
-      desc: "Masa red velvet con chips de chocolate blanco y centro de queso crema." },
-    { id: "pistacho", cat: "especiales", name: "Pistacho", photo: "img/pistacho.jpg",
-      desc: "Pistacho tostado, crema de pistacho y trozos de chocolate blanco." },
-    { id: "doble-chocolate", cat: "clasicas", name: "Doble chocolate",
-      desc: "Masa de cacao con trozos de chocolate blanco y oscuro.", dough: "#4E2D1F", edge: "#2F1A10", chunks: ["#F3E8D4", "#F3E8D4", "#24120A"] },
-    { id: "avellana", cat: "rellenas", name: "Tentación de avellana",
-      desc: "Galleta de chocolate con corazón de crema de avellanas.", dough: "#8A5530", edge: "#5E361B", chunks: ["#2B150B", "#C99A62"] },
-    { id: "arequipe-sal", cat: "rellenas", name: "Arequipe y sal",
-      desc: "Centro de arequipe, chips de caramelo y escamas de sal marina.", dough: "#D9A466", edge: "#A9713A", chunks: ["#B5651D", "#FFFFFF"] },
+    { id: "oreo", name: "Oreo", photo: "img/sabor-oreo.jpg",
+      desc: "Galleta tipo New York con trozos de galleta Oreo." },
+    { id: "leche-klim", name: "Leche Klim", photo: "img/sabor-leche-klim.jpg",
+      desc: "Galleta tipo New York cubierta con leche en polvo Klim." },
+    { id: "chocolatina-jet", name: "Chocolatina JET", photo: "img/sabor-chocolatina-jet.jpg",
+      desc: "Galleta tipo New York con trozos de Chocolatina JET." },
+    { id: "milo", name: "Milo", photo: "img/sabor-milo.jpg",
+      desc: "Galleta tipo New York de Milo con trozos de chocolate." },
+    { id: "mm", name: "M&M", photo: "img/sabor-mm.jpg",
+      desc: "Galleta tipo New York con chocolates M&M de colores." },
   ];
   const boxById = Object.fromEntries(BOXES.map(b => [b.id, b]));
   const flavorById = Object.fromEntries(FLAVORS.map(f => [f.id, f]));
-  const STRIP = ["clasica", "cookies-cream", "lotus", "red-velvet", "pistacho"];
+  const STRIP = FLAVORS.map(f => f.id);
 
   const cop = n => "$" + n.toLocaleString("es-CO");
-
-  // ---------- Ilustraciones (solo sabores sin foto) ----------
-  function rng(seed) {
-    return () => {
-      seed |= 0; seed = seed + 0x6D2B79F5 | 0;
-      let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
-      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
-      return ((t ^ t >>> 14) >>> 0) / 4294967296;
-    };
-  }
-  const hash = s => [...s].reduce((h, c) => (h * 31 + c.charCodeAt(0)) | 0, 7);
-  function blob(r, cx, cy, radius, points, wobble) {
-    const pts = [];
-    for (let i = 0; i < points; i++) {
-      const a = (i / points) * Math.PI * 2;
-      const d = radius * (1 - wobble / 2 + r() * wobble);
-      pts.push([cx + Math.cos(a) * d, cy + Math.sin(a) * d]);
-    }
-    let path = `M${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)}`;
-    for (let i = 0; i < pts.length; i++) {
-      const p0 = pts[(i - 1 + pts.length) % pts.length], p1 = pts[i], p2 = pts[(i + 1) % pts.length], p3 = pts[(i + 2) % pts.length];
-      const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
-      const c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
-      path += `C${c1.map(v => v.toFixed(1))} ${c2.map(v => v.toFixed(1))} ${p2.map(v => v.toFixed(1))}`;
-    }
-    return path + "Z";
-  }
-  let gid = 0;
-  function cookieSVG(p) {
-    const r = rng(hash(p.id));
-    const g = `g${gid++}`;
-    let chunks = "";
-    const n = 11 + Math.floor(r() * 5);
-    for (let i = 0; i < n; i++) {
-      const a = r() * Math.PI * 2, d = Math.sqrt(r()) * 30;
-      const x = 50 + Math.cos(a) * d, y = 47 + Math.sin(a) * d * .8;
-      chunks += `<path d="${blob(r, x, y, 2.6 + r() * 3.6, 6, .8)}" fill="${p.chunks[Math.floor(r() * p.chunks.length)]}"/><path d="${blob(r, x - .8, y - .9, 1.1, 5, .5)}" fill="#fff" opacity=".22"/>`;
-    }
-    let cracks = "";
-    for (let i = 0; i < 6; i++) {
-      const a = r() * Math.PI * 2, d = 8 + r() * 26, l = 5 + r() * 9;
-      const x = 50 + Math.cos(a) * d, y = 47 + Math.sin(a) * d * .8;
-      cracks += `<path d="M${x.toFixed(1)},${y.toFixed(1)} q${(r() * 6 - 3).toFixed(1)},${(l / 2).toFixed(1)} ${(r() * 8 - 4).toFixed(1)},${l.toFixed(1)}" stroke="${p.edge}" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".5"/>`;
-    }
-    return `<svg viewBox="0 0 100 100" aria-hidden="true">
-      <defs><radialGradient id="${g}" cx="42%" cy="34%" r="70%"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></radialGradient></defs>
-      <ellipse cx="51" cy="86" rx="40" ry="7" fill="#2C1B11" opacity=".18"/>
-      <path d="${blob(r, 50, 52, 44, 20, .12)}" fill="${p.edge}"/>
-      <path d="${blob(r, 50, 47, 43, 20, .1)}" fill="${p.dough}"/>
-      <path d="${blob(r, 50, 47, 43, 20, .1)}" fill="url(#${g})"/>
-      ${cracks}${chunks}
-    </svg>`;
-  }
-  const media = (p, alt) => p.photo ? `<img src="${p.photo}" alt="${alt}" loading="lazy">` : cookieSVG(p);
+  const media = (p, alt) => `<img src="${p.photo}" alt="${alt}" loading="lazy">`;
 
   // ---------- Estado ----------
   // cart: cajas [{ id, qty }]; flavors: ids de sabores elegidos para las cajas.
-  const state = { cart: [], flavors: [], filter: "all", query: "" };
+  const state = { cart: [], flavors: [], query: "" };
   try {
     const saved = JSON.parse(localStorage.getItem("sm-cookies-cart") || "{}");
     if (Array.isArray(saved.cart)) state.cart = saved.cart.flatMap(l => {
@@ -674,8 +615,6 @@
     const p = flavorById[id];
     return `<a href="#p-${id}" data-goto="${id}"><div class="ph" style="background-image:url('${p.photo}')" role="img" aria-label="Galleta ${p.name}"></div><span class="label">${p.name}</span></a>`;
   }).join("");
-  $("filters").innerHTML = [{ id: "all", name: "Todos" }, ...CATEGORIES].map(c =>
-    `<button type="button" data-filter="${c.id}" aria-pressed="${c.id === "all"}">${c.name}</button>`).join("");
   $("year").textContent = new Date().getFullYear();
   document.querySelectorAll("[data-wa]").forEach(a => { a.href = waLink(`Hola ${BRAND}, quiero hacer un pedido.`); a.target = "_blank"; a.rel = "noopener"; });
   $("quoteLink").href = waLink(`Hola ${BRAND}, quiero cotizar una caja personalizada.`);
@@ -712,23 +651,19 @@
   function renderGrid() {
     const q = state.query.trim().toLowerCase();
     const items = FLAVORS.filter(p =>
-      (state.filter === "all" || p.cat === state.filter) &&
-      (!q || (p.name + " " + p.desc).toLowerCase().includes(q)));
+      !q || (p.name + " " + p.desc).toLowerCase().includes(q));
     $("grid").innerHTML = items.length ? items.map(flavorCard).join("")
       : `<p class="no-results">No encontramos sabores con “${state.query.replace(/[<>&"]/g, "")}”. Prueba con otro o mira todo el menú.</p>`;
-    document.querySelectorAll("[data-filter]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.filter === state.filter)));
   }
   renderGrid();
 
-  // ---------- Navegación, filtros y búsqueda ----------
+  // ---------- Navegación y búsqueda ----------
   document.addEventListener("click", e => {
-    const f = e.target.closest("[data-filter]");
-    if (f) { state.filter = f.dataset.filter; renderGrid(); }
     const g = e.target.closest("[data-goto]");
     if (g) {
       // Asegura que la tarjeta exista en la grilla antes de saltar a ella.
       e.preventDefault();
-      state.filter = "all"; state.query = ""; $("search").value = ""; renderGrid();
+      state.query = ""; $("search").value = ""; renderGrid();
       const target = $(`p-${g.dataset.goto}`);
       target.scrollIntoView({ block: "center" });
       target.querySelector("[data-pick]").focus({ preventScroll: true });
@@ -740,7 +675,7 @@
     $("searchToggle").setAttribute("aria-expanded", String(open));
     if (open) $("search").focus();
   });
-  $("search").addEventListener("input", e => { state.query = e.target.value; state.filter = "all"; renderGrid(); });
+  $("search").addEventListener("input", e => { state.query = e.target.value; renderGrid(); });
   $("search").addEventListener("keydown", e => { if (e.key === "Enter") $("catalogo").scrollIntoView(); });
 
   // ---------- Carrito y sabores ----------
