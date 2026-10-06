@@ -314,11 +314,10 @@
   #grid { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
   #grid .card-media { background: #F8F2DC; }
   #grid .card-media img { object-fit: contain; }
-  @media (max-width: 760px) { #grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 760px) { #grid { grid-template-columns: repeat(2, 1fr); } #grid select { font-size: .76rem; padding: 8px 2px 8px 8px; letter-spacing: -.01em; } }
   .boxes .card-media { aspect-ratio: 4 / 5; }
   .boxes .price { font-size: 1.35rem; font-weight: 700; font-family: var(--display); }
   @media (max-width: 760px) { .boxes { grid-template-columns: 1fr; } .boxes .desc { display: block; } .boxes .card-body { padding: 16px; } }
-  .pick[aria-pressed="true"] { background: var(--choco); color: var(--gold); }
 
   /* Regalo */
   .gift { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; }
@@ -327,12 +326,6 @@
   .posters img { width: 100%; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
   @media (max-width: 800px) { .gift { grid-template-columns: 1fr; } }
 
-  /* Elegidos en el carrito */
-  .chosen { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 14px; margin: 14px 0; }
-  .chosen h3 { margin: 0 0 8px; font-size: .85rem; text-transform: uppercase; letter-spacing: .05em; }
-  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-  .chips button { border: 1.5px solid var(--line); background: var(--cream); border-radius: 999px; padding: 4px 10px; font-size: .82rem; cursor: pointer; }
-  .chosen p { margin: 0; font-size: .86rem; color: var(--ink-soft); }
 
   /* Instagram */
   .ig { text-align: center; }
@@ -500,7 +493,7 @@
     <div class="wrap">
       <p class="eyebrow">Presentaciones 🎁</p>
       <h2 class="section-title" id="cajas-title">Cajas de galletas y mini galletas</h2>
-      <p class="section-sub">Los sabores son de libre elección. Elige tu caja y márcanos tus sabores favoritos en el menú.</p>
+      <p class="section-sub">Añade una caja surtida y cuéntanos los sabores en las notas, o elige en el menú una caja de tu sabor favorito.</p>
       <div class="grid boxes" id="boxes"></div>
       <noscript>
         <ul class="noscript-list">
@@ -534,7 +527,7 @@
     <div class="wrap">
       <p class="eyebrow">Menú 🍪</p>
       <h2 class="section-title" id="seleccion">Nuestro menú de galletas</h2>
-      <p class="section-sub">Marca los sabores que quieres en tu caja con “Quiero este sabor”. Te confirmamos la disponibilidad por WhatsApp.</p>
+      <p class="section-sub">Elige el tamaño de caja y añádela al carrito con el sabor que más te guste. Te confirmamos la disponibilidad por WhatsApp.</p>
       <div class="grid" id="grid" aria-live="polite"></div>
     </div>
   </section>
@@ -617,11 +610,11 @@
       <div class="faq">
         <details>
           <summary>¿Cómo hago mi pedido?</summary>
-          <p>Añade tu caja al carrito, marca tus sabores en el menú, escribe tu nombre, dirección y fecha de entrega, y toca “Enviar pedido por WhatsApp”. Te respondemos para confirmar el pago y la hora.</p>
+          <p>En el menú elige el sabor y el tamaño de caja y toca “Añadir al carrito” (o añade una caja surtida). Luego abre el carrito, escribe tu nombre, dirección y fecha de entrega, y toca “Enviar pedido por WhatsApp”. Te respondemos para confirmar el pago y la hora.</p>
         </details>
         <details>
           <summary>¿Puedo elegir los sabores de mi caja?</summary>
-          <p>Sí, los sabores son de libre elección. Márcalos en el menú con “Quiero este sabor” o escríbelos en las notas del pedido.</p>
+          <p>Sí. En el menú puedes añadir una caja de un solo sabor, y si quieres mezclar sabores añade una caja surtida y escríbelos en las notas del pedido.</p>
         </details>
         <details>
           <summary>¿Cuánto cuestan las cajas de galletas?</summary>
@@ -757,21 +750,21 @@
   const media = (p, alt) => `<img src="${p.photo}" alt="${alt}" loading="lazy" decoding="async">`;
 
   // ---------- Estado ----------
-  // cart: cajas [{ id, qty }]; flavors: ids de sabores elegidos para las cajas.
-  const state = { cart: [], flavors: [], query: "" };
+  // cart: líneas [{ id: caja, flavor: sabor o null (caja surtida), qty }].
+  const state = { cart: [], query: "" };
   try {
     const saved = JSON.parse(localStorage.getItem("sm-cookies-cart") || "{}");
     if (Array.isArray(saved.cart)) state.cart = saved.cart.flatMap(l => {
       const q = Number(l && l.qty);
-      return l && boxById[l.id] && Number.isInteger(q) && q > 0 && q < 100 ? [{ id: l.id, qty: q }] : [];
+      const flavor = l && flavorById[l.flavor] ? l.flavor : null;
+      return l && boxById[l.id] && Number.isInteger(q) && q > 0 && q < 100 ? [{ id: l.id, flavor, qty: q }] : [];
     });
-    if (Array.isArray(saved.flavors)) state.flavors = [...new Set(saved.flavors.filter(id => flavorById[id]))];
   } catch (_) {}
-  const save = () => { try { localStorage.setItem("sm-cookies-cart", JSON.stringify({ cart: state.cart, flavors: state.flavors })); } catch (_) {} };
+  const save = () => { try { localStorage.setItem("sm-cookies-cart", JSON.stringify({ cart: state.cart })); } catch (_) {} };
   const lineTotal = l => boxById[l.id].price * l.qty;
   const cartTotal = () => state.cart.reduce((s, l) => s + lineTotal(l), 0);
   const cartUnits = () => state.cart.reduce((s, l) => s + l.qty, 0);
-  const flavorNames = () => state.flavors.map(id => flavorById[id].name);
+  const flavorLabel = l => l.flavor ? flavorById[l.flavor].name : "Surtida";
 
   const $ = id => document.getElementById(id);
   const canPrefill = Boolean(WHATSAPP || !WHATSAPP_LINK);
@@ -801,19 +794,27 @@
         <h3>${b.name}</h3>
         <p class="desc">${b.desc}</p>
         <div class="price">${cop(b.price)}</div>
-        <div class="controls"><button class="pill-gold" type="button" data-add="${b.id}">Añadir al carrito<span class="sr-only">: ${b.name}</span></button></div>
+        <div class="controls"><button class="pill-gold" type="button" data-add="${b.id}">Añadir surtida<span class="sr-only">: ${b.name}</span></button></div>
       </div>
     </article>`).join("");
 
+  // "Caja x6" / "Mini x10": etiqueta corta para el selector de tamaño.
+  const boxShort = b => (b.id.startsWith("mini") ? "Mini x" : "Caja x") + b.id.split("-")[1];
+
+  // Cada sabor se compra en la caja que el cliente elija.
   function flavorCard(p) {
-    const on = state.flavors.includes(p.id);
     return `
       <article class="card" id="p-${p.id}">
         <div class="card-media">${media(p, `Galleta tipo New York de ${p.name}`)}</div>
         <div class="card-body">
           <h3>${p.name}</h3>
           <p class="desc">${p.desc}</p>
-          <div class="controls"><button class="pill-gold pick" type="button" data-pick="${p.id}" aria-pressed="${on}">${on ? "✓ Sabor elegido" : "Quiero este sabor"}<span class="sr-only">: ${p.name}</span></button></div>
+          <div class="controls">
+            <label class="sr-only" for="box-${p.id}">Tamaño de caja para ${p.name}</label>
+            <select id="box-${p.id}" data-box-for="${p.id}">${BOXES.map(b =>
+              `<option value="${b.id}">${boxShort(b)} · ${cop(b.price)}</option>`).join("")}</select>
+            <button class="pill-gold" type="button" data-add-flavor="${p.id}">Añadir al carrito<span class="sr-only">: ${p.name}</span></button>
+          </div>
         </div>
       </article>`;
   }
@@ -835,7 +836,7 @@
       state.query = ""; $("search").value = ""; renderGrid();
       const target = $(`p-${g.dataset.goto}`);
       target.scrollIntoView({ block: "center" });
-      target.querySelector("[data-pick]").focus({ preventScroll: true });
+      target.querySelector("[data-add-flavor]").focus({ preventScroll: true });
     }
   });
   $("searchToggle").addEventListener("click", () => {
@@ -847,29 +848,22 @@
   $("search").addEventListener("input", e => { state.query = e.target.value; renderGrid(); });
   $("search").addEventListener("keydown", e => { if (e.key === "Enter") $("catalogo").scrollIntoView(); });
 
-  // ---------- Carrito y sabores ----------
+  // ---------- Carrito ----------
+  function addToCart(boxId, flavor) {
+    const b = boxById[boxId];
+    const line = state.cart.find(l => l.id === boxId && l.flavor === flavor);
+    if (line) line.qty = Math.min(99, line.qty + 1); else state.cart.push({ id: boxId, flavor, qty: 1 });
+    save(); renderBadge();
+    toast(flavor ? `${b.name} de ${flavorById[flavor].name} añadida al carrito.` : `${b.name} surtida añadida al carrito.`);
+    if ($("drawer").classList.contains("open")) { renderDrawer(); $("closeCart").focus(); }
+  }
   document.addEventListener("click", e => {
     const add = e.target.closest("[data-add]");
-    if (add) {
-      const b = boxById[add.dataset.add];
-      const line = state.cart.find(l => l.id === b.id);
-      if (line) line.qty = Math.min(99, line.qty + 1); else state.cart.push({ id: b.id, qty: 1 });
-      save(); renderBadge();
-      toast(`${b.name} añadida al carrito.`);
-      if ($("drawer").classList.contains("open")) { renderDrawer(); $("closeCart").focus(); }
-      return;
-    }
-    const pick = e.target.closest("[data-pick]");
-    if (pick) {
-      const id = pick.dataset.pick, p = flavorById[id];
-      const on = !state.flavors.includes(id);
-      state.flavors = on ? [...state.flavors, id] : state.flavors.filter(x => x !== id);
-      save();
-      pick.setAttribute("aria-pressed", String(on));
-      pick.firstChild.textContent = on ? "✓ Sabor elegido" : "Quiero este sabor";
-      toast(!on ? `${p.name} quitado de tus sabores.`
-        : state.cart.length ? `${p.name} agregado a tus sabores.`
-        : `${p.name} agregado a tus sabores. Ahora elige tu caja.`);
+    if (add) { addToCart(add.dataset.add, null); return; }
+    const addFlavor = e.target.closest("[data-add-flavor]");
+    if (addFlavor) {
+      const flavor = addFlavor.dataset.addFlavor;
+      addToCart(addFlavor.closest(".card").querySelector("[data-box-for]").value, flavor);
     }
   });
   function renderBadge() {
@@ -881,21 +875,17 @@
     const pad = n => String(n).padStart(2, "0");
     return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
   }
-  function chosenHTML() {
-    return `<div class="chosen"><h3>Tus sabores</h3>${state.flavors.length
-      ? `<div class="chips">${state.flavors.map(id => `<button type="button" data-unpick="${id}" aria-label="Quitar ${flavorById[id].name}">${flavorById[id].name} ✕</button>`).join("")}</div>`
-      : `<p>Aún no eliges sabores. Márcalos en el menú o escríbelos en las notas.</p>`}</div>`;
-  }
   function linesHTML() {
     return state.cart.map((l, i) => {
       const b = boxById[l.id];
+      const thumb = l.flavor ? flavorById[l.flavor] : b;
       return `
         <div class="line-item">
-          <div class="thumb">${media(b, "")}</div>
+          <div class="thumb">${media(thumb, "")}</div>
           <div>
             <h3>${b.name}</h3>
-            <div class="variant">${cop(b.price)} c/u</div>
-            <div class="qty" role="group" aria-label="Cantidad de ${b.name}">
+            <div class="variant">${l.flavor ? `Sabor: ${flavorById[l.flavor].name}` : "Surtida: cuéntanos los sabores en las notas"} · ${cop(b.price)}</div>
+            <div class="qty" role="group" aria-label="Cantidad de ${b.name} ${flavorLabel(l)}">
               <button type="button" data-dec="${i}" aria-label="Quitar una">−</button>
               <span>${l.qty}</span>
               <button type="button" data-inc="${i}" aria-label="Agregar una">+</button>
@@ -903,20 +893,15 @@
           </div>
           <div class="amount">${cop(lineTotal(l))}</div>
         </div>`;
-    }).join("") + chosenHTML() + `<div class="summary"><span>Subtotal</span><span>${cop(cartTotal())}</span></div>
+    }).join("") + `<div class="summary"><span>Subtotal</span><span>${cop(cartTotal())}</span></div>
       <p class="ship-note">El domicilio se cotiza según tu dirección y te lo confirmamos por WhatsApp.</p>`;
   }
   function renderDrawer() {
     if (!state.cart.length) {
-      // Sin caja no hay pedido: se ofrece elegirla aquí mismo, junto con los sabores ya marcados.
-      const intro = state.flavors.length
-        ? `<h3>Ya elegiste tus sabores</h3><p>Ahora elige el tamaño de tu caja para completar el pedido.</p>`
-        : `<p>Tu carrito está vacío. Elige una caja para empezar; los sabores son de libre elección.</p>`;
-      $("drawerBody").innerHTML = `<div class="empty empty-cart">${intro}</div>
-        ${state.flavors.length ? chosenHTML() : ""}
+      $("drawerBody").innerHTML = `<div class="empty empty-cart"><p>Tu carrito está vacío. Añade galletas desde el menú eligiendo sabor y caja, o una caja surtida aquí:</p></div>
         <ul class="pick-boxes">${BOXES.map(b => `
           <li><span><strong>${b.name}</strong>${cop(b.price)}</span>
-            <button class="pill-gold" type="button" data-add="${b.id}">Añadir<span class="sr-only">: ${b.name}</span></button></li>`).join("")}
+            <button class="pill-gold" type="button" data-add="${b.id}">Añadir<span class="sr-only">: ${b.name} surtida</span></button></li>`).join("")}
         </ul>`;
       return;
     }
@@ -926,21 +911,13 @@
         <div class="field"><label for="f-name">Nombre</label><input id="f-name" name="name" autocomplete="name"><div class="error" id="e-name"></div></div>
         <div class="field"><label for="f-address">Dirección de entrega</label><input id="f-address" name="address" autocomplete="street-address"><div class="error" id="e-address"></div></div>
         <div class="field"><label for="f-date">Fecha de entrega</label><input id="f-date" name="date" type="date" min="${minDate()}"><div class="error" id="e-date"></div></div>
-        <div class="field"><label for="f-notes">Notas (opcional)</label><textarea id="f-notes" name="notes" rows="2" placeholder="Cuántas de cada sabor, mensaje para el regalo…"></textarea></div>
+        <div class="field"><label for="f-notes">Notas (opcional)</label><textarea id="f-notes" name="notes" rows="2" placeholder="Sabores de tus cajas surtidas, mensaje para el regalo…"></textarea></div>
         <button class="pill-gold btn-wa" type="submit">Enviar pedido por WhatsApp</button>
       </form>`;
   }
   $("drawerBody").addEventListener("click", e => {
     if (e.target.closest("[data-close]")) { closeCart(); return; }
-    if (e.target.id === "clearCart") { state.cart = []; state.flavors = []; save(); renderBadge(); renderGrid(); renderDrawer(); $("closeCart").focus(); return; }
-    const un = e.target.closest("[data-unpick]");
-    if (un) {
-      state.flavors = state.flavors.filter(x => x !== un.dataset.unpick);
-      save(); renderGrid();
-      if ($("lines")) $("lines").innerHTML = linesHTML(); else renderDrawer();
-      $("closeCart").focus();
-      return;
-    }
+    if (e.target.id === "clearCart") { state.cart = []; save(); renderBadge(); renderDrawer(); $("closeCart").focus(); return; }
     const inc = e.target.closest("[data-inc]"), dec = e.target.closest("[data-dec]");
     if (!inc && !dec) return;
     const i = Number(inc ? inc.dataset.inc : dec.dataset.dec);
@@ -975,8 +952,7 @@
     const f = k => form.elements[k].value.trim();
     const text = [
       `Hola ${BRAND}, quiero hacer este pedido:`,
-      ...state.cart.map(l => `• ${l.qty} × ${boxById[l.id].name} — ${cop(lineTotal(l))}`),
-      `Sabores: ${state.flavors.length ? flavorNames().join(", ") : "los elijo por este chat"}`,
+      ...state.cart.map(l => `• ${l.qty} × ${boxById[l.id].name} (${flavorLabel(l)}) — ${cop(lineTotal(l))}`),
       `Subtotal: ${cop(cartTotal())}`,
       `Nombre: ${f("name")}`,
       `Dirección: ${f("address")}`,

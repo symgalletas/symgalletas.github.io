@@ -28,6 +28,6 @@ Los sabores son de libre elección en todas las cajas. El valor del domicilio se
 
 ## Cómo pedir
 
-1. Elegir la caja y los sabores en https://symgalletas.github.io/
+1. En https://symgalletas.github.io/ elegir sabor y tamaño de caja (o una caja surtida) y añadirla al carrito.
 2. Escribir nombre, dirección y fecha de entrega (mínimo dos días de anticipación).
 3. Enviar el pedido por WhatsApp; la tienda confirma el pago y la hora de entrega.
