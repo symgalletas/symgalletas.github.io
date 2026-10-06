@@ -301,61 +301,29 @@
   .toast { position: fixed; left: 50%; bottom: 90px; transform: translate(-50%, 30px); opacity: 0; visibility: hidden; background: var(--choco); color: var(--cream-text); border: 1px solid var(--gold); padding: 12px 20px; border-radius: 999px; z-index: 60; transition: opacity .2s, transform .2s, visibility .2s; max-width: calc(100% - 32px); text-align: center; }
   .toast.show { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
 
-  /* ---------- Apertura cinematográfica ---------- */
+  /* ---------- Apertura breve con el logo ---------- */
   .intro {
-    --lb: clamp(46px, 9vh, 88px);          /* alto de las franjas de cine */
-    --curtain: cubic-bezier(.77, 0, .18, 1);
-    position: fixed; inset: 0; z-index: 100; overflow: hidden;
+    position: fixed; inset: 0; z-index: 100; cursor: pointer;
     background: #F3EADD;                   /* mismo crema del fondo del video */
+    transition: opacity .6s ease, visibility .6s;
   }
   html.no-intro .intro { display: none; }
   html.intro-playing { overflow: hidden; }
   .intro video {
-    position: absolute; top: var(--lb); bottom: var(--lb); left: 0; width: 100%; height: calc(100% - 2 * var(--lb)); object-fit: contain;
-    opacity: 0; transition: opacity .9s ease;
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;
+    opacity: 0; transition: opacity .5s ease;
   }
-  .intro.playing video { opacity: 1; animation: intro-push 10.5s cubic-bezier(.25, .6, .3, 1) forwards; }
-  @keyframes intro-push { from { transform: scale(1); } to { transform: scale(1.035); } }
+  .intro.playing video { opacity: 1; }
   /* En pantallas verticales el video horizontal se amplía para que el logo llene el ancho */
   @media (max-aspect-ratio: 4/5) { .intro video { width: 160%; left: -30%; } }
-  .intro-vignette {
-    position: absolute; inset: 0; pointer-events: none;
-    background: radial-gradient(ellipse at center, rgba(31,19,12,0) 55%, rgba(31,19,12,.28) 100%);
-  }
-  .intro-grain {
-    position: absolute; inset: -50%; pointer-events: none; opacity: .07; mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    animation: intro-grain .9s steps(4) infinite;
-  }
-  @keyframes intro-grain { 0% { transform: translate(0, 0); } 25% { transform: translate(-3%, 2%); } 50% { transform: translate(2%, -3%); } 75% { transform: translate(-2%, -1%); } 100% { transform: translate(0, 0); } }
-  /* Franjas: cerradas al inicio, se abren a formato panorámico, se cierran y revelan la página */
-  .intro-bar { position: absolute; left: 0; right: 0; height: 50.5vh; background: var(--choco); z-index: 2; transition: transform 1.1s var(--curtain); }
-  .intro-bar.top { top: 0; }
-  .intro-bar.bottom { bottom: 0; }
-  .intro.open .intro-bar.top { transform: translateY(calc(-100% + var(--lb))); }
-  .intro.open .intro-bar.bottom { transform: translateY(calc(100% - var(--lb))); }
-  .intro.closing .intro-bar { transition-duration: .8s; transform: none; }
-  .intro.reveal { background: transparent; }
-  .intro.reveal video, .intro.reveal .intro-vignette, .intro.reveal .intro-grain { display: none; }
-  .intro.reveal .intro-bar { transition-duration: 1.2s; }
-  .intro.reveal .intro-bar.top { transform: translateY(-101%); }
-  .intro.reveal .intro-bar.bottom { transform: translateY(101%); }
-  .intro-controls {
-    position: absolute; left: 0; right: 0; top: 0; height: var(--lb);
-    display: flex; align-items: center; gap: 18px; padding: 0 max(16px, 4vw);
-    opacity: 0; transition: opacity .6s ease .5s;
-  }
-  .intro.open .intro-controls { opacity: 1; }
-  .intro-brand { font-family: var(--display); font-weight: 600; font-size: .7rem; letter-spacing: .32em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
-  .intro-progress { flex: 1; height: 1px; background: rgba(243,231,214,.18); overflow: hidden; }
-  .intro-progress span { display: block; height: 100%; background: var(--gold); transform-origin: left; transform: scaleX(0); }
+  .intro.leaving { opacity: 0; visibility: hidden; pointer-events: none; }
   .intro-skip {
-    border: 1px solid rgba(227,174,95,.6); background: transparent; color: var(--cream-text);
-    border-radius: 999px; padding: 7px 16px; cursor: pointer; white-space: nowrap;
-    font-family: var(--display); font-weight: 600; font-size: .68rem; letter-spacing: .2em; text-transform: uppercase;
+    position: absolute; right: max(16px, 3vw); bottom: max(16px, 3vh);
+    border: 0; background: none; cursor: pointer; padding: 8px 4px;
+    font-family: var(--display); font-weight: 600; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
+    color: rgba(44,27,17,.55); text-decoration: underline; text-underline-offset: 4px;
   }
-  .intro-skip:hover { background: var(--gold); color: var(--choco); }
-  @media (max-width: 520px) { .intro-brand { display: none; } }
+  .intro-skip:hover { color: var(--ink); }
 
   /* Entrada de la portada después de la apertura */
   @media (prefers-reduced-motion: no-preference) {
@@ -384,18 +352,9 @@
 </head>
 <body>
 
-<div class="intro" id="intro" role="dialog" aria-modal="true" aria-label="Presentación de S&amp;M Galletas hechas con amor">
-  <video id="introVideo" src="img/intro.mp4" muted playsinline preload="auto" aria-hidden="true"></video>
-  <div class="intro-vignette"></div>
-  <div class="intro-grain"></div>
-  <div class="intro-bar top"></div>
-  <div class="intro-bar bottom">
-    <div class="intro-controls">
-      <span class="intro-brand">S&amp;M · Medellín</span>
-      <div class="intro-progress" aria-hidden="true"><span id="introProgress"></span></div>
-      <button class="intro-skip" type="button" id="introSkip">Saltar intro</button>
-    </div>
-  </div>
+<div class="intro" id="intro" aria-label="Presentación de S&amp;M Galletas hechas con amor">
+  <video id="introVideo" src="img/intro.mp4#t=5.4" muted playsinline preload="auto" aria-hidden="true"></video>
+  <button class="intro-skip" type="button" id="introSkip">Saltar</button>
 </div>
 
 <header class="topbar">
@@ -982,57 +941,46 @@
 })();
 </script>
 <script>
-  // ---------- Apertura cinematográfica ----------
+  // ---------- Apertura breve con el logo ----------
+  // Solo se muestra el tramo final del video (cuando se forma el logo) y un poco acelerado.
+  // Cualquier clic, toque, desplazamiento o tecla la cierra.
   (() => {
     const html = document.documentElement;
     const intro = document.getElementById("intro");
     const video = document.getElementById("introVideo");
-    const page = [...document.querySelectorAll("body > header, body > main, body > footer, body > .wa-float")];
     const done = () => html.classList.add("intro-done");
 
     if (html.classList.contains("no-intro")) { intro.remove(); done(); return; }
 
-    page.forEach(el => el.inert = true);
     let started = false, ending = false;
+    const dismissEvents = ["click", "wheel", "touchstart", "keydown"];
 
     function end() {
       if (ending) return;
       ending = true;
       try { sessionStorage.setItem("sm-intro-vista", "1"); } catch (_) {}
-      intro.classList.remove("open");
-      intro.classList.add("closing");                 // las franjas se cierran sobre el logo
-      setTimeout(() => {
-        video.pause();
-        intro.classList.add("reveal");                // y se abren revelando la página
-        html.classList.remove("intro-playing");
-        page.forEach(el => el.inert = false);
-        done();
-        setTimeout(() => intro.remove(), 1250);
-      }, 850);
+      dismissEvents.forEach(t => window.removeEventListener(t, end));
+      intro.classList.add("leaving");
+      html.classList.remove("intro-playing");
+      done();
+      setTimeout(() => { video.pause(); intro.remove(); }, 650);
     }
 
     function start() {
       if (started || ending) return;
       started = true;
-      intro.classList.add("open");
-      document.getElementById("introSkip").focus({ preventScroll: true });
+      video.playbackRate = 1.3;
       video.play().then(() => intro.classList.add("playing")).catch(end);
     }
 
-    const bar = document.getElementById("introProgress");
-    video.addEventListener("timeupdate", () => {
-      if (video.duration) bar.style.transform = `scaleX(${video.currentTime / video.duration})`;
-    });
     video.addEventListener("ended", end);
     video.addEventListener("error", end);
     if (video.readyState >= 3) start(); else video.addEventListener("canplay", start, { once: true });
+    dismissEvents.forEach(t => window.addEventListener(t, end, { passive: true }));
 
-    // Si el video no arranca a tiempo (conexión lenta, autoplay bloqueado), no hacemos esperar.
-    setTimeout(() => { if (!started) end(); }, 4000);
-    setTimeout(end, 15000);
-
-    document.getElementById("introSkip").addEventListener("click", end);
-    document.addEventListener("keydown", e => { if (!ending && (e.key === "Escape" || e.key === "Enter")) end(); });
+    // Si el video no arranca rápido (conexión lenta, autoplay bloqueado), no hacemos esperar.
+    setTimeout(() => { if (!started) end(); }, 2500);
+    setTimeout(end, 7000);
   })();
 </script>
 </body>
